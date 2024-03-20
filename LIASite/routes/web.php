@@ -1,15 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('index');
 });
 
-// Guest users
-Route::middleware('guest')->group(function () {
-});
-
-// Authenticated users
-Route::middleware('auth')->group(function () {
-});
+Route::view('/', 'loginpage')->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
