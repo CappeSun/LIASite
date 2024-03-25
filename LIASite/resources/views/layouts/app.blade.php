@@ -13,12 +13,13 @@
     <!-- Styles -->
     @vite('resources/css/app.css')
 </head>
-<body class="bg-gray-200">
+<body class="">
     <main id="app">
         @yield('content')
     </main>
 
     <!-- Scripts here-->
+    <script src="{{ asset('js/menu.js') }}"></script>
 </body>
 
 </html>
