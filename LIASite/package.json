@@ -3,7 +3,9 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "serve": "vite preview",
+        "watch": "vite --mode development"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.18",
