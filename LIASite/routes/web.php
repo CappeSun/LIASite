@@ -6,6 +6,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+// TODO: Istället för att gruppera efter användare kan vi gruppera efter model/controller
+
 // Guest users
 Route::middleware('guest')->group(function () {
 });
