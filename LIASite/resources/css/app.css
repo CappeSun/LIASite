@@ -4,4 +4,9 @@
 
 body {
     margin: 0 auto;
+    background-color: red;
+}
+
+h1 {
+    color: red;
 }
