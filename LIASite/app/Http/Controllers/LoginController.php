@@ -16,13 +16,13 @@ class LoginController extends Controller
         ]);
 
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required']
+            'email' => 'required|email',
+            'password' => 'required|string'
         ]);
 
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect('/');
+            return back();
         }
 
         return back()->withErrors([
@@ -33,6 +33,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout($request);
-        return redirect('/');
+        return back();
     }
 }
