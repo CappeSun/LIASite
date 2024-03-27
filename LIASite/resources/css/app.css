@@ -1,14 +1,15 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-body {
-    margin: 0 auto;
-    background-color: white;
-}
-
-h1 {
-    color: red;
+:root {
+    --header-height: 114px;
+    --yrgo-red: #f52a3b;
+    --marine1: rgba(0, 26, 82, 0.2);
+    --marine2: rgba(0, 26, 82, 0.5);
+    --marine3: rgba(0, 26, 82, 0.8);
+    --marine4: rgba(0, 26, 82, 1);
 }
 
 /* Animations for dropmenu */
@@ -23,6 +24,101 @@ h1 {
     }
 }
 
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background-color: white;
+}
+
+.page-height {
+    height: calc(100vh - var(--header-height));
+}
+
+.text-padding {
+    padding: 28px 24px;
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+
 .animate-dropDown {
     animation: dropDown 300ms ease-in-out forwards;
+}
+
+/* Buttons */
+
+.btn-1 {
+    width: 130px;
+    display: inline-flex;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--marine4);
+    color: var(--marine4);
+    border-radius: 32px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+}
+.btn-1:hover,
+.btn-1:active,
+.btn-1:focus {
+    background-color: var(--marine4);
+    color: white;
+}
+
+/* Header & paragraph styles */
+
+h1 {
+    font-size: 96px;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 60px;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 36px;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+h6 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p {
+    font-weight: 400;
+}
+
+.p1 {
+    font-size: 18px;
+}
+
+.p2 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
 }
