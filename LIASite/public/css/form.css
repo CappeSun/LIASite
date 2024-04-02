@@ -1,0 +1,56 @@
+/* CSS for forms */
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--marine1);
+    margin: 24px;
+    padding: 24px 16px;
+}
+
+.register-container > h6 {
+    /* margin-bottom: 24px; */
+    padding: 8px 0px;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+}
+
+.register-container form label {
+    padding: 8px 0px;
+}
+
+.register-container form input {
+    padding: 8px 0px;
+    background-color: unset;
+    border-bottom: 1px solid black;
+}
+
+.register-container form > button {
+    align-self: center;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.register-container p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+}
+
+.register-container a {
+    border-bottom: 1px solid black;
+}
+.register-container a:hover,
+a:focus,
+a:active {
+    border-bottom: 1px solid var(--marine3);
+    color: var(--marine3);
+}

@@ -6,6 +6,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+/* Temporary registerpg */
+Route::get('/register', function () {
+    return view('register-student');
+});
+
 // TODO: Istället för att gruppera efter användare kan vi gruppera efter model/controller
 
 // Guest users

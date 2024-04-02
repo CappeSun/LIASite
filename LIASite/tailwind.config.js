@@ -14,6 +14,7 @@ export default {
             marine2: 'var(--marine2)',
             marine3: 'var(--marine3)',
             marine4: 'var(--marine4)',
+            text1: 'var(--text1)',
         },
       },
   },
