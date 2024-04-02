@@ -12,6 +12,10 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
+
+    <!-- Additional css files -->
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+
 </head>
 <body class="">
     <main id="app">
