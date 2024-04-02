@@ -31,6 +31,10 @@
     border-bottom: 1px solid black;
 }
 
+.register-container form input:focus {
+    outline: none;
+}
+
 .register-container form > button {
     align-self: center;
     margin-top: 16px;
