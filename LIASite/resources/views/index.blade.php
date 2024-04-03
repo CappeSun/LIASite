@@ -53,5 +53,9 @@
         <input type="hidden" name="_method" value="PATCH">
         <button>Update Panel</button>
     </form>
+    <form action="/panels/delete" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button>Delete Panel</button>
+    </form>
 </body>
 </html>

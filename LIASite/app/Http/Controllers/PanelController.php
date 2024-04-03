@@ -58,7 +58,7 @@ class PanelController extends Controller
 
         $panel->save();
 
-        return redirect('/panels');
+        return redirect('/account');
     }
 
     public function update(Request $request)
@@ -92,6 +92,20 @@ class PanelController extends Controller
         if ($request->size) $panel->size = $request->size;
 
         $panel->update();
+
+        return back();
+    }
+
+    public function delete(Request $request)
+    {
+        // return response('Blame Cappe', 501);    // Temporary until done
+
+        if (Auth::user()['access_level'] < 1)
+            return response('Only company accounts may create a panel', 401);
+
+        $panel = Panel::where('user_id', Auth::user()['id'])->first();
+
+        $panel->delete();
 
         return back();
     }
