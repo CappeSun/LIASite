@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Panel;
+use Illuminate\Support\Facades\Auth;
 
 class PanelController extends Controller
 {
@@ -13,7 +14,7 @@ class PanelController extends Controller
             return response('Only company accounts may create a panel', 401);
         if (!Auth::user()['email_verified_at'])
             return response('Email not yet verified, contact <email> and I\'ll get you set up', 401);
-        if (Panel::where('user_id', Auth::user()['id'])->Find())
+        if (Panel::where('user_id', Auth::user()['id'])->first())
             return response('You may only create one panel', 401);
 
         $this->validate($request, [
@@ -54,7 +55,6 @@ class PanelController extends Controller
         $panel->positions = $request->positions;
         $panel->desc = $request->desc;
         $panel->size = $request->size;
-        $panel->public = $request->public;
 
         $panel->save();
 
@@ -63,12 +63,12 @@ class PanelController extends Controller
 
     public function update(Request $request)
     {
-        return response('Blame Cappe', 501);    // Temporary until done
+        // return response('Blame Cappe', 501);    // Temporary until done
 
         if (Auth::user()['access_level'] < 1)
             return response('Only company accounts may create a panel', 401);
 
-        $panel = Panel::where('user_id', Auth::user()['id'])->Find();
+        $panel = Panel::where('user_id', Auth::user()['id'])->first();
 
         if (!$panel)
             return response('You do not have a panel yet', 401);
@@ -83,13 +83,13 @@ class PanelController extends Controller
             'size' => 'nullable|numeric|min:0|max:3',
         ]);
 
-        if ($request->name) $site->name = $request->name;
-        if ($request->email) $site->email = $request->email;
-        if ($request->location) $site->location = $request->location;
-        if ($request->area) $site->area = $request->area;
-        if ($request->positions) $site->positions = $request->positions;
-        if ($request->desc) $site->desc = $request->desc;
-        if ($request->size) $site->size = $request->size;
+        if ($request->name) $panel->name = $request->name;
+        if ($request->email) $panel->email = $request->email;
+        if ($request->location) $panel->location = $request->location;
+        if ($request->area) $panel->area = $request->area;
+        if ($request->positions) $panel->positions = $request->positions;
+        if ($request->desc) $panel->desc = $request->desc;
+        if ($request->size) $panel->size = $request->size;
 
         $panel->update();
 

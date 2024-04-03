@@ -30,5 +30,28 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <button>Logout</button>
     </form>
+    <form action="/panels/create" method="post">
+        <input type="text" name="name" value="{{ old('name') }}">
+        <input type="text" name="email" value="{{ old('email') }}">
+        <input type="text" name="location" value="{{ old('location') }}">
+        <input type="text" name="area" value="{{ old('area') }}">
+        <input type="text" name="positions" value="{{ old('positions') }}">
+        <input type="text" name="desc" value="{{ old('desc') }}">
+        <input type="text" name="size" value="{{ old('size') }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button>Create Panel</button>
+    </form>
+    <form action="/panels/update" method="post">
+        <input type="text" name="name" value="{{ old('name') }}">
+        <input type="text" name="email" value="{{ old('email') }}">
+        <input type="text" name="location" value="{{ old('location') }}">
+        <input type="text" name="area" value="{{ old('area') }}">
+        <input type="text" name="positions" value="{{ old('positions') }}">
+        <input type="text" name="desc" value="{{ old('desc') }}">
+        <input type="text" name="size" value="{{ old('size') }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_method" value="PATCH">
+        <button>Update Panel</button>
+    </form>
 </body>
 </html>
