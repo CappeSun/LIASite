@@ -17,6 +17,7 @@ class Panel extends Model
         'area',
         'positions',
         'desc',
-        'size'
+        'size',
+        'public'
     ];
 }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('positions', 500);
             $table->string('desc', 2000);
             $table->string('size', 255);
+            $table->boolean('public', 255)->default(false);
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
