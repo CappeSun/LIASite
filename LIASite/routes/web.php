@@ -27,7 +27,14 @@ Route::get('/panels/{panel}', function(){
 });
 Route::post('/panels/create', [PanelController::class, 'create'])->middleware('auth');
 Route::patch('/panels/update', [PanelController::class, 'update'])->middleware('auth');
+Route::post('/panels/delete', [PanelController::class, 'delete'])->middleware('auth');
 
-/* USER */
-Route::post('/user/create', [UserController::class, 'create'])->middleware('guest');
-Route::post('/user/delete', [UserController::class, 'delete'])->middleware('auth');
+/* ACCOUNT */
+Route::get('/account', function(){
+    return view('account');
+})->middleware('auth');
+Route::get('/account/panel', function(){
+    return view('mypanel');
+})->middleware('auth');
+Route::post('/account/create', [UserController::class, 'create'])->middleware('guest');
+Route::post('/account/delete', [UserController::class, 'delete'])->middleware('auth');
