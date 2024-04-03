@@ -15,7 +15,7 @@
         <label class="p1" for="password">Lösenord</label>
         <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
     
-        <button class="btn btn-2 bg-marine3 text-marine1" type="submit">Nästa</button>
+        <button class="btn btn-2" type="submit">Nästa</button>
     </form>
     <p>Har du redan ett konto? <a href="#{{-- ADD LINK TO lOGIN --}}">Klicka här</a> för att logga in</p>
 </section>

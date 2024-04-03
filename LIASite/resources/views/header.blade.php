@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <header>
-    <nav class="nav flex justify-between w-screen items-center px-6 pt-16 pb-5 relative">
+    <nav class="nav flex justify-between w-screen items-center px-6 pt-16 pb-10 relative">
         <div class="logo">
             <img src="{{ asset('images/yrgo.svg') }}" alt="yrgo logo">
         </div>

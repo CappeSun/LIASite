@@ -35,7 +35,7 @@
     </section>
     <section class="register-company text-padding flex flex-col items-center bg-marine1">
         <p class="p1 mb-5">Låter detta intressant men det passar er inte i schemat? Registrera ert företag i vår företagspool för studenter att hitta LIA-platser</p>
-        <button class="btn btn-1 text-marine4">Registrera</button>
+        <button class="btn btn-1">Registrera</button>
     </section>
     <section class="edu-info text-padding flex flex-col gap-16 my-8">
         <div class="DD">
