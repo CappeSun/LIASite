@@ -11,6 +11,20 @@ Route::get('/', function(){
 });
 Route::view('/', 'index')->name('login');
 
+/* Temporary registerpg */
+Route::get('/register-student', function () {
+    return view('register-student');
+});
+
+Route::get('/register-company', function () {
+    return view('register-company');
+});
+
+// TODO: Istället för att gruppera efter användare kan vi gruppera efter model/controller
+
+// Guest users
+Route::middleware('guest')->group(function () {
+=======
 /* LOGIN */
 Route::get('/login', function(){
     return view('loginpage');
@@ -18,6 +32,10 @@ Route::get('/login', function(){
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
+// Authenticated users
+Route::middleware('auth')->group(function () {
+});
+=======
 /* PANEL */
 Route::get('/panels', function(){
     return view('panels');

@@ -1,0 +1,93 @@
+/* CSS for forms */
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--marine1);
+    margin: 24px;
+    padding: 24px 16px;
+}
+
+.register-container > h6 {
+    /* margin-bottom: 24px; */
+    padding: 8px 0px 16px 0px;
+    text-align: center;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+}
+
+.register-container form input {
+    padding: 8px 0px;
+    background-color: unset;
+    border-bottom: 1px solid black;
+}
+
+.register-container form input:focus {
+    outline: none;
+}
+
+.register-container form > button {
+    align-self: center;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    align-self: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.register-container p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+}
+
+.register-container a {
+    border-bottom: 1px solid black;
+}
+.register-container a:hover,
+a:focus,
+a:active {
+    border-bottom: 1px solid var(--marine3);
+    color: var(--marine3);
+}
+
+.form-about {
+    display: none;
+}
+
+.form-info {
+    display: none;
+}
+
+/* Custom checkbox styles */
+
+.custom-checkbox input {
+    width: 0;
+}
+.custom-checkbox .checkbox-icon {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 36px;
+    padding: 8px;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.custom-checkbox input:checked + .checkbox-icon {
+    background-color: var(--marine1);
+    border: 1px solid var(--marine3);
+}
