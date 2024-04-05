@@ -10,8 +10,8 @@
 }
 
 .register-container > h6 {
-    /* margin-bottom: 24px; */
     padding: 8px 0px;
+    text-align: center;
 }
 
 .register-container form {
@@ -57,4 +57,16 @@
 .register-container a:active {
     border-bottom: 1px solid var(--marine3);
     color: var(--marine3);
+}
+
+.form-about,
+.form-info {
+    display: none;
+}
+
+/* Login screen */
+
+.login-student,
+.login-company {
+    display: none;
 }

@@ -6,16 +6,17 @@ use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 
 /* INDEX */
+
 Route::view('/', 'index')->name('index');
 
 /* Temporary registerpg */
 Route::get('/register-student', function () {
     return view('register-student');
-});
+})->name('register-student');
 
 Route::get('/register-company', function () {
     return view('register-company');
-});
+})->name('register-company');
 
 /* LOGIN */
 Route::get('/login', function () {
