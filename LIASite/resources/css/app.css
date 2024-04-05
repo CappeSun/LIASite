@@ -89,7 +89,7 @@ body {
 
 /* Header & paragraph styles */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -98,7 +98,7 @@ h6,
 .p1,
 .p2 {
     color: var(--text1);
-}
+} */
 
 h1 {
     font-size: 96px;

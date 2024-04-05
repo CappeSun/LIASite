@@ -20,9 +20,9 @@
     </section>
     <section class="event-location text-padding flex flex-col items-center {{-- h-1/2 --}} bg-marine4">
         <h5 class="text-center text-white mb-5">Vi ses på Visual Arena</h5>
-        <div class="map-circle rounded-full bg-white h-64 w-64 mb-5">
-            {{-- TODO: Add map-location --}}
-        </div>
+        <div class="map-circle rounded-full bg-white h-64 w-64 mb-5 flex justify-center items-center overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.485604049026!2d11.937260901148653!3d57.70542346526514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff34fdfd19933%3A0x8658f4da8360dd7b!2sYrgo%2C%20h%C3%B6gre%20yrkesutbildning%20G%C3%B6teborg!5e0!3m2!1ssv!2sse!4v1712322974873!5m2!1ssv!2sse" width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>        
         <p class="p1 text-white">Lorum ipsum ifon om plats och tid en gång till. Mer info om plats bus hållsplat och liknande. </p>
     </section>
     <section class="about-us text-padding flex flex-col">
