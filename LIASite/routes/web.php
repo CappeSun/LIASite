@@ -6,10 +6,7 @@ use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 
 /* INDEX */
-Route::get('/', function(){
-    return view('index');
-});
-Route::view('/', 'index')->name('login');
+Route::view('/', 'index')->name('index');
 
 /* Temporary registerpg */
 Route::get('/register-student', function () {
@@ -20,38 +17,30 @@ Route::get('/register-company', function () {
     return view('register-company');
 });
 
-// TODO: Istället för att gruppera efter användare kan vi gruppera efter model/controller
-
-// Guest users
-Route::middleware('guest')->group(function () {
-=======
 /* LOGIN */
-Route::get('/login', function(){
-    return view('loginpage');
-});
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-// Authenticated users
-Route::middleware('auth')->group(function () {
-});
-=======
 /* PANEL */
-Route::get('/panels', function(){
+Route::get('/panels', function () {
     return view('panels');
 });
-Route::get('/panels/{panel}', function(){
-    return view('panel')->with('panel', $panel);
+Route::get('/panels/{panel}', function () {
+    return view('panel')->with('panel', /* $panel */);
 });
 Route::post('/panels/create', [PanelController::class, 'create'])->middleware('auth');
 Route::patch('/panels/update', [PanelController::class, 'update'])->middleware('auth');
 Route::post('/panels/delete', [PanelController::class, 'delete'])->middleware('auth');
 
 /* ACCOUNT */
-Route::get('/account', function(){
+Route::get('/account', function () {
     return view('account');
 })->middleware('auth');
-Route::get('/account/panel', function(){
+Route::get('/account/panel', function () {
     return view('mypanel');
 })->middleware('auth');
 Route::post('/account/create', [UserController::class, 'create'])->middleware('guest');

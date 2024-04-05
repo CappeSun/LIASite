@@ -11,8 +11,7 @@
 
 .register-container > h6 {
     /* margin-bottom: 24px; */
-    padding: 8px 0px 16px 0px;
-    text-align: center;
+    padding: 8px 0px;
 }
 
 .register-container form {
@@ -20,6 +19,10 @@
     flex-direction: column;
     width: 100%;
     gap: 6px;
+}
+
+.register-container form label {
+    padding: 8px 0px;
 }
 
 .register-container form input {
@@ -38,13 +41,6 @@
     margin-bottom: 10px;
 }
 
-.buttons {
-    display: flex;
-    align-self: center;
-    margin-top: 16px;
-    gap: 8px;
-}
-
 .register-container p {
     font-size: 12px;
     font-style: normal;
@@ -57,37 +53,8 @@
     border-bottom: 1px solid black;
 }
 .register-container a:hover,
-a:focus,
-a:active {
+.register-container a:focus,
+.register-container a:active {
     border-bottom: 1px solid var(--marine3);
     color: var(--marine3);
-}
-
-.form-about {
-    display: none;
-}
-
-.form-info {
-    display: none;
-}
-
-/* Custom checkbox styles */
-
-.custom-checkbox input {
-    width: 0;
-}
-.custom-checkbox .checkbox-icon {
-    position: relative;
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 36px;
-    padding: 8px;
-    width: 100%;
-    font-size: 14px;
-    text-align: center;
-}
-
-.custom-checkbox input:checked + .checkbox-icon {
-    background-color: var(--marine1);
-    border: 1px solid var(--marine3);
 }
