@@ -2,7 +2,7 @@
 <header>
     <nav class="nav flex justify-between w-screen items-center px-6 pt-16 pb-5 relative">
         <div class="logo">
-            <img src="{{ asset('images/yrgo.svg') }}" alt="yrgo logo">
+            <a href="{{ route('index') }}"><img src="{{ asset('images/yrgo.svg') }}" alt="yrgo logo"></a>
         </div>
         <div class="hamburger-container">
             <img class="hamburger" src="{{ asset('images/hamburgare.svg') }}" alt="hamburger menu">

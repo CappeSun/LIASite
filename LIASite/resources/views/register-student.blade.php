@@ -2,7 +2,7 @@
 @include('header')
 
 <section class="register-container">
-    <h6>Student</h6>
+    <h6>Skapa ett konto</h6>
     {{-- TODO: Add routes --}}
     <form action="{{-- {{ route('register') }} --}}" method="post">
         @csrf
@@ -17,5 +17,5 @@
     
         <button class="btn btn-2" type="submit">Nästa</button>
     </form>
-    <p>Har du redan ett konto? <a href="#{{-- ADD LINK TO lOGIN --}}">Klicka här</a> för att logga in</p>
+    <p>Har du redan ett konto? <a href="{{ route('login') }}">Klicka här</a> för att logga in</p>
 </section>

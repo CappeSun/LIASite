@@ -25,6 +25,7 @@
     <!-- Scripts here-->
     <script src="{{ asset('js/menu.js') }}"></script>
     <script src="{{ asset('js/form.js') }}"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
 </body>
 
 </html>
