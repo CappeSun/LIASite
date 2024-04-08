@@ -70,3 +70,25 @@
 .login-company {
     display: none;
 }
+
+/* Custom checkbox styles */
+
+.custom-checkbox input {
+    width: 0;
+}
+.custom-checkbox .checkbox-icon {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 36px;
+    padding: 8px;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid var(--marine1);
+}
+
+.custom-checkbox input:checked + .checkbox-icon {
+    background-color: var(--marine1);
+    border: 1px solid var(--marine3);
+}
