@@ -92,3 +92,10 @@
     background-color: var(--marine1);
     border: 1px solid var(--marine3);
 }
+
+/* Error-msg */
+#formError1,
+#formError2,
+#formError3 {
+    color: red;
+}

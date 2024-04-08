@@ -3,14 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButtons = document.querySelectorAll(".next-btn");
     const prevButtons = document.querySelectorAll(".prev-btn");
 
+    // Validate, hide and display next form 
     nextButtons.forEach((button, index) => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
             const currentForm = forms[index];
             const nextForm = forms[index + 1];
-            if (currentForm && nextForm) {
-                hideForm(currentForm);
-                showForm(nextForm);
+            const error = document.getElementById(`formError${index + 1}`);
+
+            if (validateForm(currentForm, error)) {
+                if (currentForm && nextForm) {
+                    hideForm(currentForm);
+                    showForm(nextForm);
+                }
             }
         });
     });
@@ -37,5 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (form) {
             form.style.display = "none";
         }
+    }
+
+    function validateForm(form, error) {
+        const inputs = form.querySelectorAll("input[required]");
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                error.innerHTML = "Please fill in all fields.";
+            }
+        });
+        return isValid;
     }
 });

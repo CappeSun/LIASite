@@ -15,7 +15,8 @@
         
             <label class="p1" for="password">Lösenord</label>
             <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
-        
+            
+            <p id="formError1"></p>
             <button class="btn btn-2 next-btn" type="submit">Nästa</button>
         </form>
     </div>
@@ -35,6 +36,7 @@
             <label class="p1" for="company-description">Vad arbetar företaget med?</label>
             <input class="form-input" type="text" id="companyDescription" name="company-description" placeholder="Fordon" required>
             
+            <p id="formError2"></p>
             <div class="buttons">
                 <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
                 <button class="btn btn-2 next-btn" type="submit">Nästa</button>
@@ -121,6 +123,7 @@
                 </label>                  
             </div>
             
+            <p id="formError3"></p>
             <div class="buttons">
                 <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
                 <button class="btn btn-2 next-btn" type="submit">Nästa</button>
