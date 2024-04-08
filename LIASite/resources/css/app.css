@@ -53,8 +53,9 @@ body {
 
 /* Buttons */
 
-.btn {
-    width: 165px;
+.btn,
+.btn-marine {
+    /* width: 165px; */
     display: inline-flex;
     padding: 8px 32px;
     justify-content: center;
@@ -69,6 +70,12 @@ body {
     border: 1px solid var(--marine3);
 }
 
+.btn-marine {
+    background-color: var(--marine4);
+    color: #f2f2f2;
+    padding: 16px 44px;
+}
+
 .btn-1:hover,
 .btn-1:active {
     background-color: var(--marine3);
@@ -76,7 +83,9 @@ body {
 }
 
 .btn-2:hover,
-.btn-2:active {
+.btn-2:active,
+.btn-marine:hover,
+.btn-marine:active {
     background-color: var(--marine1);
     color: var(--marine3);
 }
@@ -125,6 +134,12 @@ h5 {
     font-size: 24px;
     font-weight: 700;
     line-height: 24px;
+}
+
+.h5-2 {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 27px;
 }
 
 h6 {

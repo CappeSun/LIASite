@@ -1,22 +1,17 @@
 @extends('layouts.app')
 @include('header')
 @section('content')
-    <section class="event-info-container page-height flex flex-col">
-        <div class="hero bg-yrgoRed h-1/3 flex">
-            <h4 class="self-center text-center px-6 text-white">Mingelevent hostad av Yrgo på Visual Arena Lindholmen</h4>
+    <section class="event-info-container bg-yrgoRed page-height flex flex-col justify-between p-6">
+        <div class="hero flex flex-col gap-14">
+            <p class="h5-2 text-white">Digital Designer, <br>Webbutvecklare, Yrgo</p>
+            <h4 class="text-white">Mingelevent hostad av Yrgo på Visual Arena Lindholmen</h4>
+            <div class="event-info">
+                <p class="p2 text-white">
+                    Välkomna på mingelevent för att hitta framtida medarbetare i ert företag eller bara jobba tillsammans under LIA. Ni kommer att träffa Webbutvecklare och Digital Designers från Yrgo som vill visa vad de har jobbat med under året och vi hoppas att ni hittar en match. 
+                </p>
+            </div>
         </div>
-        <div class="event-info text-padding">
-            <h5 class="pb-6">Välkommen att träffa oss den 24 april kl 15- 17 </h5>
-            <p class="p1">
-                Mingel mellan bransch och studerande Webbutvecklare och Digital Designers på Yrgo<br><br>
-
-                Välkomna på mingelevent för att hitta framtida medarbetare i ert företag eller bara jobba tillsammans under LIA. Ni kommer att träffa Webbutvecklare och Digital Designers från Yrgo som vill visa vad de har jobbat med under året och vi hoppas att ni hittar en match.<br><br>
-                
-                Ni som företag kan med fördel ta med någon form av identifikation för synlighet. Vi kommer att ha stationer där företag och studerande kan träffas.<br><br>
-                
-                Varmt välkomna önskar Webbutvecklare och Digital Designer!
-            </p>
-        </div>
+        <a class="self-center" href="{{ route('register-company') }}"><button class="btn-marine">Jag kommer</button></a>
     </section>
     <section class="event-location text-padding flex flex-col items-center {{-- h-1/2 --}} bg-marine4">
         <h5 class="text-center text-white mb-5">Vi ses på Visual Arena</h5>

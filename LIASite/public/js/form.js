@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputs.forEach(input => {
             if (!input.value.trim()) {
                 isValid = false;
-                error.innerHTML = "Please fill in all fields.";
+                error.innerHTML = "Hoppsan, glömde vi fylla i allt?";
             }
         });
         return isValid;
