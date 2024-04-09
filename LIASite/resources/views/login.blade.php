@@ -5,8 +5,8 @@
     <div class="login-screen flex flex-col items-center">
         <h5 class="mb-9">Logga in</h5>
         <h5 class="mb-8">Jag är</h5>
-        <button onclick="loginStudent()" class="btn btn-3 bg-marine1 mb-6">student</button>
-        <button onclick="loginCompany()" class="btn btn-3 bg-marine1">företag</button>
+        <button onclick="loginStudent()" class="btn btn-3 bg-marine4 text-white mb-6">student</button>
+        <button onclick="loginCompany()" class="btn btn-3 bg-marine4 text-white">företag</button>
     </div>
     <div class="login-student register-container">
         <h6 class="text-center">Student</h6>

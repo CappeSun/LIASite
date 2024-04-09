@@ -15,14 +15,39 @@
 
 /* Animations for dropmenu */
 @keyframes dropDown {
-    from {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+@keyframes dropDownReverse {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+@keyframes dropText {
+    0% {
         opacity: 0;
-        transform: translateY(-20px);
     }
-    to {
+    100% {
         opacity: 1;
-        transform: translateY(0);
     }
+}
+
+.animate-dropText {
+    animation: dropText 200ms ease-in-out forwards;
+}
+.animate-dropDown {
+    animation: dropDown 400ms ease forwards;
+    transform-origin: top center;
+}
+.animate-dropDownReverse {
+    animation: dropDownReverse 400ms ease forwards;
 }
 
 * {
@@ -45,10 +70,6 @@ body {
 
 .rounded-full {
     border-radius: 100%;
-}
-
-.animate-dropDown {
-    animation: dropDown 300ms ease-in-out forwards;
 }
 
 /* Buttons */

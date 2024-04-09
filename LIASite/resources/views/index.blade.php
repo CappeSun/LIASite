@@ -29,7 +29,7 @@
         </div>
     </section>
     <section class="register-company text-padding flex flex-col items-center bg-marine1">
-        <p class="p1 mb-5">Låter detta intressant men det passar er inte i schemat? Registrera ert företag i vår företagspool för studenter att hitta LIA-platser</p>
+        <h5 class="mb-5 leading-7 text-center">Låter detta intressant men det passar er inte i schemat? Registrera ert företag i vår företagspool för studenter att hitta LIA-platser</h5>
         <button class="btn btn-1">Registrera</button>
     </section>
     <section class="edu-info text-padding flex flex-col gap-16 my-8">
