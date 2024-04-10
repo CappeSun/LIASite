@@ -9,16 +9,17 @@ use App\Http\Controllers\UserController;
 Route::get('/', function (){
     return view('index')->with('user', userInfo());
 })->name('index');
+Route::get('/test', function (){
+    return view('indexTest')->with('user', userInfo());
+})->name('index');
 
 /* CREATE ACCOUNT */
 Route::get('/register-student', function () {
     return view('register-student');
 })->name('register-student');
-
 Route::get('/register-company', function () {
     return view('register-company');
 })->name('register-company');
-
 Route::get('/gdpr', function () {
     return view('gdpr');
 })->name('gdpr');
@@ -27,7 +28,6 @@ Route::get('/gdpr', function () {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
-
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
@@ -52,6 +52,7 @@ Route::get('/account/panel', function () {
 Route::post('/account/create', [UserController::class, 'create'])->middleware('guest');
 Route::post('/account/delete', [UserController::class, 'delete'])->middleware('auth');
 
+/* FUNCTIONS */
 function userInfo(){
     if (Auth::user())
         return ['name' => Auth::user()['name'], 'level' => Auth::user()['access_level']];

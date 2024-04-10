@@ -31,11 +31,11 @@ class UserController extends Controller
             'password' => 'required|string'
         ]);
 
-        Auth::attempt($credentials)
-        $request->session()->regenerate();
+        Auth::attempt($credentials);
 
         if ($request->level == 2){
-            // Alert the user they gotta verify email
+            // Tell the user they gotta verify email
+            return 'Lv. 2!';
         }
 
         return redirect('/');
