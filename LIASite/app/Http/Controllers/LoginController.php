@@ -35,4 +35,11 @@ class LoginController extends Controller
         Auth::logout($request);
         return back();
     }
+
+    public function indexPage()
+    {
+        if (Auth::user())
+            return view('index')->with('user', ['name' => Auth::user()['name'], 'level' => Auth::user()['access_level']]);
+        return view('index')->with('user', ['name' => 'Guest', 'level' => 0]);
+    }
 }

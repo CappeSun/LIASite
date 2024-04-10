@@ -6,10 +6,7 @@ use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 
 /* INDEX */
-Route::get('/', function(){
-    return view('index');
-});
-Route::view('/', 'index')->name('login');
+Route::get('/', [LoginController::class, 'indexPage']);
 
 /* LOGIN */
 Route::get('/login', function(){
