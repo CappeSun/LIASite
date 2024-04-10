@@ -13,7 +13,7 @@
             <a href="{{ route('index') }}">Hem</a>
             <a href="">Kontakta oss</a>
             <a href="">Om eventet</a>
-            <a href="">GDPR</a>
+            <a href="{{ route('gdpr') }}">GDPR</a>
         </div>
     </nav>
 </header>

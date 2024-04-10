@@ -192,6 +192,11 @@ h6 {
     font-weight: 400;
 }
 
-.p2 {
+.p2,
+.p3-tiny {
     font-weight: 300;
+}
+
+.p3-tiny {
+    font-size: 14px;
 }

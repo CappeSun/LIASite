@@ -18,6 +18,10 @@ Route::get('/register-company', function () {
     return view('register-company');
 })->name('register-company');
 
+Route::get('/gdpr', function () {
+    return view('gdpr');
+})->name('gdpr');
+
 /* LOGIN */
 Route::get('/login', function () {
     return view('login');
