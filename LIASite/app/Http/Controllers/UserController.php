@@ -26,6 +26,14 @@ class UserController extends Controller
 
         $user->save();
 
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string'
+        ]);
+
+        Auth::attempt($credentials)
+        $request->session()->regenerate();
+
         if ($request->level == 2){
             // Alert the user they gotta verify email
         }
@@ -45,5 +53,11 @@ class UserController extends Controller
     public function delete(Request $request)
     {
         return response('Blame Cappe', 501);    // Temporary until done
+
+        $user = Panel::where('user_id', Auth::user()['id'])->first();
+
+        $user->delete();
+
+        return redirect('/');
     }
 }

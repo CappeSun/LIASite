@@ -6,10 +6,11 @@ use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 
 /* INDEX */
+Route::get('/', [LoginController::class, 'indexPage']);
 
+/*
 Route::view('/', 'index')->name('index');
 
-/* Temporary registerpg */
 Route::get('/register-student', function () {
     return view('register-student');
 })->name('register-student');
@@ -21,6 +22,7 @@ Route::get('/register-company', function () {
 Route::get('/gdpr', function () {
     return view('gdpr');
 })->name('gdpr');
+*/
 
 /* LOGIN */
 Route::get('/login', function () {

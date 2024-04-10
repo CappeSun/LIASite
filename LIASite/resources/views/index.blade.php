@@ -55,7 +55,7 @@
     <title>LIASite</title>
 </head>
 <body>
-    <h1>Yup, seems to work</h1>
+    <h1>Yup, seems to work... Hi <?= $user['name']; ?>! Access level is <?= $user['level']; ?></h1>
     <form action="/panels/update" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="_method" value="PATCH">
