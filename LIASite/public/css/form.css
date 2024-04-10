@@ -3,10 +3,9 @@
 .register-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: var(--marine1);
-    margin: 24px;
-    padding: 24px 16px;
+    /* align-items: center; */
+    margin-top: 24px;
+    padding: 24px;
 }
 
 .register-container > h6 {
@@ -18,11 +17,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 6px;
-}
-
-.register-container form label {
-    padding: 8px 0px;
+    gap: 10px;
 }
 
 .register-container form input {
@@ -35,10 +30,16 @@
     outline: none;
 }
 
-.register-container form > button {
+.register-container button {
     align-self: center;
-    margin-top: 16px;
     margin-bottom: 10px;
+    margin-top: 46px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
 }
 
 .register-container p {
@@ -62,6 +63,16 @@
 .form-about,
 .form-info {
     display: none;
+}
+
+.form-bg {
+    background-color: var(--marine1);
+    padding: 24px 16px;
+}
+
+.form-bg h6 {
+    text-align: center;
+    margin-bottom: 16px;
 }
 
 /* Login screen */

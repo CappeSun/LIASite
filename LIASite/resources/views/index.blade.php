@@ -11,7 +11,9 @@
                 </p>
             </div>
         </div>
-        <a class="self-center" href="{{ route('register-company') }}"><button class="btn-marine">Jag kommer</button></a>
+        <div class="fixed bottom-10 inset-x-0 flex justify-center z-50">
+            <a href="{{ route('register-company') }}" class="btn-marine">Jag kommer</a>
+        </div>        
     </section>
     <section class="event-location text-padding flex flex-col items-center {{-- h-1/2 --}} bg-marine4">
         <h5 class="text-center text-white mb-5">Vi ses på Visual Arena</h5>
@@ -42,6 +44,7 @@
             <p class="p2">Som webbutvecklare jobbar du med att utveckla produkter och tjänster för webben. Det kan handla om webbplatser, webbapplikationer eller e-handelssystem.</p>
         </div>
     </section>
+    @include('footer')
 @endsection
 <!--
 <!DOCTYPE html>

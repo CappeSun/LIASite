@@ -5,10 +5,10 @@
     <div class="login-screen flex flex-col items-center">
         <h5 class="mb-9">Logga in</h5>
         <h5 class="mb-8">Jag är</h5>
-        <button onclick="loginStudent()" class="btn btn-3 bg-marine4 text-white mb-6">student</button>
-        <button onclick="loginCompany()" class="btn btn-3 bg-marine4 text-white">företag</button>
+        <button onclick="loginStudent()" class="btn btn-2 next-btn text-white mb-6">student</button>
+        <button onclick="loginCompany()" class="btn btn-2 next-btn text-white">företag</button>
     </div>
-    <div class="login-student register-container">
+    <div class="login-student register-container form-bg mx-6">
         <h6 class="text-center">Student</h6>
         {{-- TODO: Add routes --}}
         <form action="{{-- {{ route('register') }} --}}" method="post">
@@ -19,11 +19,11 @@
             <label class="p1" for="password">Lösenord</label>
             <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
         
-            <button class="btn btn-2" type="submit">Logga in</button>
+            <button class="btn btn-2 next-btn" type="submit">Logga in</button>
         </form>
-        <p>Har du inte ett konto? <a href="{{ route('register-student') }}">Klicka här</a> för att registrera dig</p>
+        <p class="text-center">Har du inte ett konto? <a href="{{ route('register-student') }}">Klicka här</a> för att registrera dig</p>
     </div>
-    <div class="login-company register-container">
+    <div class="login-company register-container form-bg mx-6">
         <h6 class="text-center">Företag</h6>
         {{-- TODO: Add routes --}}
         <form action="{{-- {{ route('register') }} --}}" method="post">
@@ -34,8 +34,8 @@
             <label class="p1" for="password">Lösenord</label>
             <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
         
-            <button class="btn btn-2" type="submit">Logga in</button>
+            <button class="btn btn-2 next-btn" type="submit">Logga in</button>
         </form>
-        <p>Har du inte ett konto? <a href="{{ route('register-company') }}">Klicka här</a> för att registrera dig</p>
+        <p class="text-center">Har du inte ett konto? <a href="{{ route('register-company') }}">Klicka här</a> för att registrera dig</p>
     </div>
 </section>

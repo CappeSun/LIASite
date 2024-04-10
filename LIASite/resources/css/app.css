@@ -76,7 +76,7 @@ body {
 
 .btn,
 .btn-marine {
-    /* width: 165px; */
+    max-width: 215px;
     display: inline-flex;
     padding: 8px 32px;
     justify-content: center;
@@ -89,6 +89,11 @@ body {
     letter-spacing: 1.25px;
     text-transform: uppercase;
     border: 1px solid var(--marine3);
+}
+
+.next-btn {
+    background-color: var(--marine4);
+    color: white;
 }
 
 .btn-marine {
@@ -115,6 +120,15 @@ body {
 .btn-3:active {
     background-color: white;
     border: 1px solid var(--marine1);
+}
+
+footer a {
+    color: #828282;
+}
+
+a:active,
+a:hover {
+    color: black;
 }
 
 /* Header & paragraph styles */
