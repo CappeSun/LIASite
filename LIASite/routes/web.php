@@ -6,11 +6,11 @@ use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 
 /* INDEX */
-Route::get('/', [LoginController::class, 'indexPage']);
+Route::get('/', function (){
+    return view('index')->with('user', userInfo());
+})->name('index');
 
-/*
-Route::view('/', 'index')->name('index');
-
+/* CREATE ACCOUNT */
 Route::get('/register-student', function () {
     return view('register-student');
 })->name('register-student');
@@ -22,7 +22,6 @@ Route::get('/register-company', function () {
 Route::get('/gdpr', function () {
     return view('gdpr');
 })->name('gdpr');
-*/
 
 /* LOGIN */
 Route::get('/login', function () {
@@ -52,3 +51,10 @@ Route::get('/account/panel', function () {
 })->middleware('auth');
 Route::post('/account/create', [UserController::class, 'create'])->middleware('guest');
 Route::post('/account/delete', [UserController::class, 'delete'])->middleware('auth');
+
+function userInfo(){
+    if (Auth::user())
+        return ['name' => Auth::user()['name'], 'level' => Auth::user()['access_level']];
+    else
+        return ['name' => 'Guest', 'level' => 0];
+}
