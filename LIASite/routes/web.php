@@ -1,15 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 
 /* INDEX */
-Route::get('/', function (){
+
+Route::get('/', function () {
     return view('index')->with('user', userInfo());
 })->name('index');
-Route::get('/test', function (){
+
+Route::get('/test', function () {
     return view('indexTest')->with('user', userInfo());
 })->name('index');
 
@@ -17,9 +20,13 @@ Route::get('/test', function (){
 Route::get('/register-student', function () {
     return view('register-student');
 })->name('register-student');
+Route::post('/register-student', [UserController::class, 'create'])->name('register-student');
+
 Route::get('/register-company', function () {
     return view('register-company');
 })->name('register-company');
+Route::post('/register-company', [UserController::class, 'create'])->name('register-company');
+
 Route::get('/gdpr', function () {
     return view('gdpr');
 })->name('gdpr');
@@ -53,7 +60,8 @@ Route::post('/account/create', [UserController::class, 'create'])->middleware('g
 Route::post('/account/delete', [UserController::class, 'delete'])->middleware('auth');
 
 /* FUNCTIONS */
-function userInfo(){
+function userInfo()
+{
     if (Auth::user())
         return ['name' => Auth::user()['name'], 'level' => Auth::user()['access_level']];
     else

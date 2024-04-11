@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButtons = document.querySelectorAll(".next-btn");
     const prevButtons = document.querySelectorAll(".prev-btn");
 
-    // Validate, hide and display next form 
+    // Validate, hide and display next form
     nextButtons.forEach((button, index) => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputs.forEach(input => {
             if (!input.value.trim()) {
                 isValid = false;
-                error.innerHTML = "Hoppsan, glömde vi fylla i allt?";
+                error.innerHTML = "Vänligen fyll i alla fält.";
             }
         });
         return isValid;

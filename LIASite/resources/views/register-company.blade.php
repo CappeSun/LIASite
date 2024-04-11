@@ -1,62 +1,59 @@
 @extends('layouts.app')
 @include('header')
 
-<section class="">
-    <div class="register-container form-register form {{-- form-bg m-6 --}}">
-        <div class="form-bg">
-            <h6>Skapa ett konto</h6>
-            {{-- TODO: Add routes --}}
-            <form action="#" method="post">
-                @csrf
+<section>
+    <form action={{-- "{{ TODO: submit all }}" --}} method="post">
+        @csrf
+        <!-- Form 1 -->
+        <div class="register-container form-register form">
+            <div class="form-bg">
+                <h6>Skapa ett konto</h6>
                 <label class="p1" for="name">Företagets namn</label>
                 <input class="form-input" type="text" id="name" name="name" placeholder="Namn..." required>
-            
+
                 <label class="p1" for="email">E-postadress</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="name@example.com" required>
-            
+                <input class="form-input" type="email" id="companyEmail" name="email" placeholder="name@example.com" required>
+
                 <label class="p1" for="password">Lösenord</label>
-                <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
-                
+                <input class="form-input" type="password" id="companyPassword" name="password" placeholder="Lösenord" required>
+
                 <p id="formError1"></p>
-            </form>
-            <p>Har du redan ett konto? <a href="{{ route('login') }}">Klicka här</a> för att logga in</p>
+            </div>
+            <div class="flex justify-center">
+                <button class="btn btn-2 next-btn mt-11 justify-center" type="button">Nästa</button>
+            </div>
         </div>
-        <button class="btn btn-2 next-btn" type="submit">Nästa</button>
-    </div>
-    <div class="register-container form-about form">
-        <div class="form-bg">
-            <h6>Om företag</h6>
-            <form action="" method="post">
-                @csrf
+
+        <!-- Form 2 -->
+        <div class="register-container form-about form" style="display: none;">
+            <div class="form-bg">
+                <h6>Om företag</h6>
                 <label class="p1" for="company-name">Företagets namn</label>
                 <input class="form-input" type="text" id="companyName" name="company-name" placeholder="Namn..." required>
-            
+
                 <label class="p1" for="company-contact">Kontaktinfo</label>
                 <input class="form-input" type="text" id="companyContact" name="company-contact" placeholder="name@example.com, LinkedIn etc." required>
-                
+
                 <label class="p1" for="location">Var ligger kontoret?</label>
                 <input class="form-input" type="text" id="location" name="location" placeholder="Vasagatan, Göteborg" required>
-                
+
                 <label class="p1" for="company-description">Vad arbetar företaget med?</label>
                 <input class="form-input" type="text" id="companyDescription" name="company-description" placeholder="Fordon" required>
-                
-                <p id="formError2"></p>
-            </form>
-        </div>
-        <div class="buttons">
-            <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
-            <button class="btn btn-2 next-btn" type="submit">Nästa</button>
-        </div>
-    </div>
-    <div class="register-container form-info form">
-        <div class="form-bg">
 
-            <h6>Info om LIA</h6>
-            <form action="" method="post">
-                @csrf
-                
+                <p id="formError2"></p>
+            </div>
+            <div class="buttons mt-11">
+                <button class="btn btn-1 prev-btn" type="button">Tillbaka</button>
+                <button class="btn btn-2 next-btn" type="button">Nästa</button>
+            </div>
+        </div>
+
+        <!-- Form 3 -->
+        <div class="register-container form-info form" style="display: none;">
+            <div class="form-bg">
+                <h6>Info om LIA</h6>
                 <div class="competence">
-                    <h6 class="p1">Kompetens ni är ute efter?</h6>
+                    <h6 class="p1 text-left">Kompetens ni är ute efter?</h6>
                     <div class="grid grid-cols-3 gap-1 pt-4 pb-2 px-6">
     
                         {{-- Competence checkboxes. ctg = category --}}
@@ -106,7 +103,6 @@
                         </label>                     
                     </div>
                 </div>
-    
                 <label class="p1 mt-2" for="requirements">Vad kan man förvänta sig för uppgifter som LIA-student?</label>
                 <input class="form-input" type="text" id="companyRequirements" name="requirements" placeholder="Ex. jobba med designsystem" required>
                 
@@ -130,13 +126,12 @@
                     </label>                  
                 </div>       
                 <p id="formError3"></p>
-            </form>
         </div>
-        <div class="buttons">
+        <div class="buttons mt-11">
             <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
             <button class="btn btn-2 next-btn" type="submit">Nästa</button>
         </div>
-    </div>
+    </form>
 </section>
 
 {{--

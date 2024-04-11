@@ -14,12 +14,12 @@
         <form action="{{-- {{ route('register') }} --}}" method="post">
             @csrf
             <label class="p1" for="email">E-postadress</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="name@example.com" required>
+            <input class="form-input" type="email" id="companyEmail" name="email" placeholder="name@example.com" required>
         
             <label class="p1" for="password">Lösenord</label>
-            <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
+            <input class="form-input" type="password" id="companyPassword" name="password" placeholder="Lösenord" required>
         
-            <button class="btn btn-2 next-btn" type="submit">Logga in</button>
+            <button class="btn btn-2 next-btn mt-2" type="submit">Logga in</button>
         </form>
         <p class="text-center">Har du inte ett konto? <a href="{{ route('register-student') }}">Klicka här</a> för att registrera dig</p>
     </div>
@@ -29,12 +29,12 @@
         <form action="{{-- {{ route('register') }} --}}" method="post">
             @csrf
             <label class="p1" for="email">E-postadress</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="name@example.com" required>
+            <input class="form-input" type="email" id="companyEmail" name="email" placeholder="name@example.com" required>
         
             <label class="p1" for="password">Lösenord</label>
-            <input class="form-input" type="password" id="password" name="password" placeholder="Lösenord" required>
+            <input class="form-input" type="password" id="companyPassword" name="password" placeholder="Lösenord" required>
         
-            <button class="btn btn-2 next-btn" type="submit">Logga in</button>
+            <button class="btn btn-2 next-btn mt-2" type="submit">Logga in</button>
         </form>
         <p class="text-center">Har du inte ett konto? <a href="{{ route('register-company') }}">Klicka här</a> för att registrera dig</p>
     </div>
