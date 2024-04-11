@@ -25,7 +25,7 @@
         </div>
 
         <!-- Form 2 -->
-        <div class="register-container form-about form" style="display: none;">
+        <div class="register-container form-about form hidden">
             <div class="form-bg">
                 <h6>Om företag</h6>
                 <label class="p1" for="company-name">Företagets namn</label>
@@ -49,7 +49,7 @@
         </div>
 
         <!-- Form 3 -->
-        <div class="register-container form-info form" style="display: none;">
+        <div class="register-container form-info form hidden">
             <div class="form-bg">
                 <h6>Info om LIA</h6>
                 <div class="competence">

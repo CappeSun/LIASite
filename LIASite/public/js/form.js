@@ -45,14 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validateForm(form, error) {
+        console.log("Form:", form);
+        if (!error) return true;
+        
         const inputs = form.querySelectorAll("input[required]");
         let isValid = true;
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                isValid = false;
-                error.innerHTML = "Vänligen fyll i alla fält.";
-            }
-        });
+        if (error) {
+            inputs.forEach((input) => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    error.innerHTML = "Vänligen fyll i alla fält.";
+                }
+            });
+        }
         return isValid;
     }
+    console.log("Forms:", forms);
 });
+
