@@ -19,10 +19,10 @@ class UserController extends Controller
 
         $user = new User;
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->access_level = $request->level;
+        $user->name = htmlspecialchars($request->name);
+        $user->email = htmlspecialchars($request->email);
+        $user->password = htmlspecialchars($request->password);
+        $user->access_level = htmlspecialchars($request->level);
 
         $user->save();
 

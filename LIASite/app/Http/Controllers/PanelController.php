@@ -53,12 +53,12 @@ class PanelController extends Controller
         $panel = new Panel;
 
         $panel->user_id = Auth::user()['id'];
-        $panel->name = $request->name;
-        $panel->email = $request->email;
-        $panel->location = $request->location;
-        $panel->area = $request->area;
-        $panel->positions = $request->positions;
-        $panel->desc = $request->desc;
+        $panel->name = htmlspecialchars($request->name);
+        $panel->email = htmlspecialchars($request->email);
+        $panel->location = htmlspecialchars($request->location);
+        $panel->area = htmlspecialchars($request->area);
+        $panel->positions = htmlspecialchars($request->positions);
+        $panel->desc = htmlspecialchars($request->desc);
         $panel->size = $request->size;
 
         $panel->save();
@@ -88,12 +88,12 @@ class PanelController extends Controller
             'size' => 'nullable|numeric|min:0|max:3',
         ]);
 
-        if ($request->name) $panel->name = $request->name;
-        if ($request->email) $panel->email = $request->email;
-        if ($request->location) $panel->location = $request->location;
-        if ($request->area) $panel->area = $request->area;
-        if ($request->positions) $panel->positions = $request->positions;
-        if ($request->desc) $panel->desc = $request->desc;
+        if ($request->name) $panel->name = htmlspecialchars($request->name);
+        if ($request->email) $panel->email = htmlspecialchars($request->email);
+        if ($request->location) $panel->location = htmlspecialchars($request->location);
+        if ($request->area) $panel->area = htmlspecialchars($request->area);
+        if ($request->positions) $panel->positions = htmlspecialchars($request->positions);
+        if ($request->desc) $panel->desc = htmlspecialchars($request->desc);
         if ($request->size) $panel->size = $request->size;
 
         $panel->update();

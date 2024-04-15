@@ -16,7 +16,6 @@ async function loadMsg(){
     let data = await response.json();
     lastId = data['lastId'];
     userId = data['userId'];
-    console.log(data);
 
     data[0].forEach((msg) =>{
         addMsg(msg);
@@ -24,11 +23,12 @@ async function loadMsg(){
 
     setTimeout(() =>{
         receiveMsg();
-    },1000);
+    },10000);
 } loadMsg();
 
 async function sendMsg(){
-    // Add receive to refresh before send
+    if (msg.value == '') return;
+
     await fetch('http://localhost:8002/chats/send', {
         method: 'POST',
         headers: {
@@ -57,7 +57,6 @@ async function receiveMsg(){
     });
     let data = await response.json();
     lastId = data['lastId'];
-    console.log(data);
 
     data[0].forEach((msg) =>{
         addMsg(msg);
@@ -65,12 +64,10 @@ async function receiveMsg(){
 
     setTimeout(() =>{
         receiveMsg();
-    },1000);
+    },10000);
 }
 
 function addMsg(msg){
-    if (msg['content'] == '') return;
-
     let msgText = document.createElement('p');
     msgText.textContent = msg['content'];
     msgText.classList.add('msg');

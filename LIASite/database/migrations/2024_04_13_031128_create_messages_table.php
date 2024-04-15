@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('receiver');
             $table->string('content');
             $table->timestamps();
+            $table->foreign('sender')->references('id')->on('users');
+            $table->foreign('receiver')->references('id')->on('users');
         });
     }
 

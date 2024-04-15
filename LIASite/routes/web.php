@@ -55,9 +55,7 @@ Route::post('/account/create', [UserController::class, 'create'])->middleware('g
 Route::post('/account/delete', [UserController::class, 'delete'])->middleware('auth');
 
 /* CHAT */
-Route::get('/chats', function(){
-    return view('chats');
-})->middleware('auth');
+Route::get('/chats', [ChatController::class, 'getList'])->middleware('auth');
 Route::get('/chats/{receiver}', [ChatController::class, 'get'])->middleware('auth');
 Route::post('/chats/load', [ChatController::class, 'load'])->middleware('auth');
 Route::post('/chats/send', [ChatController::class, 'send'])->middleware('auth');
