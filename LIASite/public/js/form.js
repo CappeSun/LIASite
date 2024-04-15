@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function validateForm(form, error) {
         console.log("Form:", form);
         if (!error) return true;
-        
+
         const inputs = form.querySelectorAll("input[required]");
         let isValid = true;
         if (error) {
@@ -62,4 +62,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     console.log("Forms:", forms);
 });
-

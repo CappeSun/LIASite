@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @include('header')
 
-<section>
-    <form action={{-- "{{ TODO: submit all }}" --}} method="post">
+<section class="mt-6">
+    <form class="flex flex-col sm:items-center" action={{-- "{{ TODO: submit all }}" --}} method="post">
         @csrf
         <!-- Form 1 -->
-        <div class="register-container form-register form">
-            <div class="form-bg">
+        <div class="p-6 mt-6 sm:w-2/3 form">
+            <div class="register-container bg-marine1 gap-custom">
                 <h6>Skapa ett konto</h6>
                 <label class="p1" for="name">Företagets namn</label>
                 <input class="form-input" type="text" id="name" name="name" placeholder="Namn..." required>
@@ -20,13 +20,13 @@
                 <p id="formError1"></p>
             </div>
             <div class="flex justify-center">
-                <button class="btn btn-2 next-btn mt-11 justify-center" type="button">Nästa</button>
+                <button class="btn btn-marine next-btn mt-11 justify-center" type="button">Nästa</button>
             </div>
         </div>
 
         <!-- Form 2 -->
-        <div class="register-container form-about form hidden">
-            <div class="form-bg">
+        <div class="p-6 mt-6 sm:w-2/3 form-about form hidden">
+            <div class="register-container bg-marine1 gap-custom">
                 <h6>Om företag</h6>
                 <label class="p1" for="company-name">Företagets namn</label>
                 <input class="form-input" type="text" id="companyName" name="company-name" placeholder="Namn..." required>
@@ -44,13 +44,13 @@
             </div>
             <div class="buttons mt-11">
                 <button class="btn btn-1 prev-btn" type="button">Tillbaka</button>
-                <button class="btn btn-2 next-btn" type="button">Nästa</button>
+                <button class="btn btn-marine next-btn" type="button">Nästa</button>
             </div>
         </div>
 
         <!-- Form 3 -->
-        <div class="register-container form-info form hidden">
-            <div class="form-bg">
+        <div class="p-6 mt-6 sm:w-2/3 form-info form hidden">
+            <div class="register-container bg-marine1 gap-custom">
                 <h6>Info om LIA</h6>
                 <div class="competence">
                     <h6 class="p1 text-left">Kompetens ni är ute efter?</h6>
@@ -129,7 +129,7 @@
         </div>
         <div class="buttons mt-11">
             <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
-            <button class="btn btn-2 next-btn" type="submit">Nästa</button>
+            <button class="btn btn-marine next-btn" type="submit">Nästa</button>
         </div>
     </form>
 </section>

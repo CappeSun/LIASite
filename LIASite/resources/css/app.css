@@ -91,10 +91,10 @@ body {
     border: 1px solid var(--marine3);
 }
 
-.next-btn {
+/* .next-btn {
     background-color: var(--marine4);
     color: white;
-}
+} */
 
 .btn-marine {
     background-color: var(--marine4);
@@ -129,6 +129,7 @@ footer a {
 a:active,
 a:hover {
     color: black;
+    opacity: 70%;
 }
 
 /* Header & paragraph styles */
@@ -145,8 +146,10 @@ h6,
 } */
 
 h1 {
-    font-size: 96px;
+    font-size: 82px;
     font-weight: 300;
+    line-height: 92px;
+    letter-spacing: -1.5px;
 }
 
 h2 {
@@ -176,6 +179,11 @@ h5 {
     font-weight: 300;
     line-height: 27px;
 }
+¨ .h5-2-mobile {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 53px;
+}
 
 h6 {
     font-size: 20px;
@@ -199,4 +207,16 @@ h6 {
 
 .p3-tiny {
     font-size: 14px;
+}
+
+@media screen and (min-width: 640px) {
+    .page-height {
+        height: auto;
+    }
+
+    h5 {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 32px;
+    }
 }

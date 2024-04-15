@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @include('header')
 
-<section class="register-container">
-    <div class="form-bg">
+<section class="flex justify-center px-6 mt-6 items-center">
+    <div class="register-container sm:w-2/3 bg-marine1">
         <h6>Skapa ett konto</h6>
         {{-- TODO: Add routes --}}
         <form action="{{ route('register-student') }}" method="post">
@@ -18,6 +18,6 @@
         
             <button class="btn btn-2 next-btn mt-2" type="submit">Nästa</button>
         </form>
-        <p>Har du redan ett konto? <a href="{{ route('login') }}">Klicka här</a> för att logga in</p>
+        <p class="text-center">Har du redan ett konto? <a href="{{ route('login') }}">Klicka här</a> för att logga in</p>
     </div>
 </section>

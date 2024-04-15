@@ -3,9 +3,7 @@
 .register-container {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    margin-top: 24px;
-    padding: 24px;
+    padding: 24px 16px;
 }
 
 .register-container > h6 {
@@ -13,29 +11,30 @@
     text-align: center;
 }
 
-.register-container form,
-.form-bg {
+.register-container form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.register-container form input,
-.form-bg input {
+.gap-custom {
+    gap: 10px;
+}
+
+input {
     padding: 8px 0px;
     background-color: unset;
     border-bottom: 1px solid black;
 }
 
-.register-container form input:focus,
-.form-bg input:focus {
+input:focus {
     outline: none;
 }
 
 .register-container button {
     align-self: center;
     margin-bottom: 10px;
-    /* margin-top: 46px; */
+    margin-top: 10px;
 }
 
 .buttons {
@@ -115,4 +114,10 @@
 #formError2,
 #formError3 {
     color: red;
+}
+
+@media screen and (min-width: 640px) {
+    .register-container {
+        padding: 24px 14%;
+    }
 }
