@@ -1,6 +1,7 @@
 let lastId = 0;
 let userId;
 const chatbox = document.getElementById('chatbox');
+const sendBtn = document.getElementById('sendBtn');
 
 async function loadMsg(){
     let response = await fetch('http://localhost:8002/chats/load', {
@@ -69,7 +70,7 @@ async function receiveMsg(){
 
 function addMsg(msg){
     if (msg['content'] == '') return;
-    
+
     let msgText = document.createElement('p');
     msgText.textContent = msg['content'];
     msgText.classList.add('msg');
@@ -90,8 +91,4 @@ msg.addEventListener('keypress', (e) =>{
 
 sendBtn.addEventListener('click', ()=>{
     sendMsg();
-});
-
-receiveBtn.addEventListener('click', ()=>{
-    receiveMsg();
 });

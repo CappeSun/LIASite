@@ -7,12 +7,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/chat.css') }}">
 </head>
 <body>
-    <div class="chatbox" id="chatbox">
-        
+    <div class="chatboxCont">
+        <h1 class="title">Chatting with <?= $receiver; ?></h1>
+        <div class="chatbox" id="chatbox"></div>
+        <textarea class="msgBox" id="msg"></textarea>
+        <button class="sendBtn" id="sendBtn">Send!</button>
     </div>
-    <input type="text" name="msg" id="msg">
-    <button id="sendBtn">Send!</button>
-    <button id="receiveBtn">Receive!</button>
 </body>
 <script>
     const csrfToken = '{{ csrf_token() }}';
