@@ -132,18 +132,13 @@ a:hover {
     opacity: 70%;
 }
 
-/* Header & paragraph styles */
+.error-container {
+    color: white;
+    margin-top: 20%;
+    background-color: var(--yrgo-red);
+}
 
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.p1,
-.p2 {
-    color: var(--text1);
-} */
+/* Header & paragraph styles */
 
 h1 {
     font-size: 82px;
