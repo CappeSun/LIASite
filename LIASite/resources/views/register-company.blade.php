@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @include('header')
 
-<section class="mt-6">
-    <form class="flex flex-col sm:items-center" action={{-- "{{ TODO: submit all }}" --}} method="post">
+<section class="mt-6 page-height page-height-desktop">
+    <form class="flex flex-col sm:items-center" action="javascript:void(0)" method="post" id="regCompanyForm">
         @csrf
         <!-- Form 1 -->
         <div class="p-6 mt-6 sm:w-2/3 form">
@@ -11,10 +11,10 @@
                 <label class="p1" for="name">Företagets namn</label>
                 <input class="form-input" type="text" id="name" name="name" placeholder="Namn..." required>
 
-                <label class="p1" for="email">E-postadress</label>
+                <label class="p1" for="companyEmail">E-postadress</label>
                 <input class="form-input" type="email" id="companyEmail" name="email" placeholder="name@example.com" required>
 
-                <label class="p1" for="password">Lösenord</label>
+                <label class="p1" for="companyPassword">Lösenord</label>
                 <input class="form-input" type="password" id="companyPassword" name="password" placeholder="Lösenord" required>
 
                 <p id="formError1"></p>
@@ -28,16 +28,16 @@
         <div class="p-6 mt-6 sm:w-2/3 form-about form hidden">
             <div class="register-container bg-marine1 gap-custom">
                 <h6>Om företag</h6>
-                <label class="p1" for="company-name">Företagets namn</label>
+                <label class="p1" for="companyName">Företagets namn</label>
                 <input class="form-input" type="text" id="companyName" name="company-name" placeholder="Namn..." required>
 
-                <label class="p1" for="company-contact">Kontaktinfo</label>
+                <label class="p1" for="companyContact">Kontaktinfo</label>
                 <input class="form-input" type="text" id="companyContact" name="company-contact" placeholder="name@example.com, LinkedIn etc." required>
 
                 <label class="p1" for="location">Var ligger kontoret?</label>
                 <input class="form-input" type="text" id="location" name="location" placeholder="Vasagatan, Göteborg" required>
 
-                <label class="p1" for="company-description">Vad arbetar företaget med?</label>
+                <label class="p1" for="companyDescription">Vad arbetar företaget med?</label>
                 <input class="form-input" type="text" id="companyDescription" name="company-description" placeholder="Fordon" required>
 
                 <p id="formError2"></p>
@@ -103,21 +103,21 @@
                         </label>                     
                     </div>
                 </div>
-                <label class="p1 mt-2" for="requirements">Vad kan man förvänta sig för uppgifter som LIA-student?</label>
+                <label class="p1 mt-2" for="companyRequirements">Vad kan man förvänta sig för uppgifter som LIA-student?</label>
                 <input class="form-input" type="text" id="companyRequirements" name="requirements" placeholder="Ex. jobba med designsystem" required>
                 
                 <h6 class="p1 my-2">Hur stort är teamet?</h6>
                 <div class="grid grid-cols-4 gap-1 pt-1.5 px-6">
-                    <label for="countEmployees14" class="custom-checkbox flex items-center">
-                      <input type="checkbox" id="countEmployees14" class="form-checkbox">
+                    <label for="countEmployees1-4" class="custom-checkbox flex items-center">
+                      <input type="checkbox" id="countEmployees1-4" class="form-checkbox">
                       <span class="checkbox-icon">1-4</span>                     
                     </label>
-                    <label for="countEmployees58" class="custom-checkbox flex items-center">
-                      <input type="checkbox" id="countEmployees58" class="form-checkbox">
+                    <label for="countEmployees5-8" class="custom-checkbox flex items-center">
+                      <input type="checkbox" id="countEmployees5-8" class="form-checkbox">
                       <span class="checkbox-icon">5-8</span>                    
                     </label>
-                    <label for="countEmployees912" class="custom-checkbox flex items-center">
-                        <input type="checkbox" id="countEmployees912" class="form-checkbox">
+                    <label for="countEmployees9-12" class="custom-checkbox flex items-center">
+                        <input type="checkbox" id="countEmployees9-12" class="form-checkbox">
                         <span class="checkbox-icon">9-12</span>                       
                     </label>
                     <label for="countEmployeesMore" class="custom-checkbox flex items-center">
@@ -129,10 +129,14 @@
         </div>
         <div class="buttons mt-11">
             <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
-            <button class="btn btn-marine next-btn" type="submit">Nästa</button>
+            <button class="btn btn-marine next-btn" id="submitForm" type="submit">Nästa</button>
         </div>
     </form>
 </section>
+
+<div id="confirmation"></div>
+
+@include('footer')
 
 {{--
     <h6>Student</h6>

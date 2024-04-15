@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 
-<section class="flex justify-center px-6 mt-6 items-center">
+<section class="flex justify-center px-6 mt-6 items-center page-height page-height-desktop">
     <div class="register-container sm:w-2/3 bg-marine1">
         <h6>Skapa ett konto</h6>
         {{-- TODO: Add routes --}}
@@ -21,3 +21,5 @@
         <p class="text-center">Har du redan ett konto? <a href="{{ route('login') }}">Klicka här</a> för att logga in</p>
     </div>
 </section>
+
+@include('footer')
