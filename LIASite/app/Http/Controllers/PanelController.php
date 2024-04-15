@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PanelController extends Controller
 {
+    public function get(Request $request, $panel){
+        // Get panel id from panel name
+        return view('panel')->with('panel', Panel::where('name', $panel));
+    }
+
     public function create(Request $request)
     {
         if (Auth::user()['access_level'] < 1)

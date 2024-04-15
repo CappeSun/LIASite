@@ -1,0 +1,36 @@
+body{
+	margin: 0;
+}
+
+.chatbox{
+	width: 100vw;
+	height: 90vh;
+	overflow: scroll;
+}
+
+.msgCont{
+	width: 100%;
+	display: flex;
+}
+
+.sentMsg{
+	justify-content: right;
+}
+
+.recMsg{
+	justify-content: left;
+}
+
+.msg{
+	max-width: 40%;
+	margin: 10px 10px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: rgb(255, 150, 150);
+}
+
+.sentMsg > p{
+}
+
+.recMsg > p{
+}
