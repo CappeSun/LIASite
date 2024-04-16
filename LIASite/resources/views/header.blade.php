@@ -13,6 +13,9 @@
             <a href="">Matcha</a>
             <a href="">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
+            @auth
+                <a href="{{ route('chat') }}">Chat</a>
+            @endauth
             @guest
                 <a href="{{ route('login') }}">Logga in</a>
             @endguest
@@ -26,6 +29,9 @@
             <a href="">Matcha</a>
             <a href="">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
+            @auth
+                <a href="{{ route('chat') }}">Chat</a>
+            @endauth
             @guest
                 <a href="{{ route('login') }}">Logga in</a>
             @endguest
