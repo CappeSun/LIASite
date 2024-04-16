@@ -11,7 +11,6 @@ class UserController extends Controller
 {
     public function create(Request $request)
     {
-        return $request;
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
