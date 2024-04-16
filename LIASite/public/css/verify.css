@@ -1,0 +1,22 @@
+body{
+	margin: 0;
+	font-family: "Inter", sans-serif;
+}
+
+h1, h2{
+	width: 80vw;
+	margin: 50px auto;
+	color: #132854;
+	text-align: center;
+}
+
+a{
+	width: fit-content;
+	margin: auto;
+	padding: 14px 20px;
+	display: block;
+	color: #FFFFFF;
+	background-color: #132854;
+	font-size: 20px;
+	text-decoration: none;
+}

@@ -48,6 +48,10 @@ class ChatController extends Controller
             $chats[] = ['name' => $name, 'lastSent' => $id == $msg['receiver']];
         }
 
+        usort($chats, function($a, $b){
+            return $a['lastSent'] - $b['lastSent'];
+        });
+
         return view('chats')->with('chats', $chats);
     }
 
