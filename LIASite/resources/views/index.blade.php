@@ -37,7 +37,7 @@
         </div>
     </section>
     <section class="register-company text-padding flex flex-col items-center bg-marine1 sm:px-28 sm:py-16">
-        <h3 class="mb-5 leading-10 sm:leading-none text-center">Låter detta intressant men det passar er inte i schemat? Registrera ert företag i vår företagspool för studenter att hitta LIA-platser</h3>
+        <h3 class="mb-5 leading-10 sm:leading-none text-center">Har du inte möjlighet att komma till eventet men det låter trevligt med en LIA-praktikant? Registrera ert företag i vår företagspool för studenter att hitta just ert företag!</h3>
         <button class="btn btn-1 sm:mt-3">Registrera</button>
     </section>
     <section class="edu-info text-padding flex flex-col gap-16 my-8 sm:px-28 sm:w-3/5">

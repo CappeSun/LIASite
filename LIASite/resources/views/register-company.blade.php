@@ -97,10 +97,22 @@
                             <input type="checkbox" id="ctg-uxui" class="form-checkbox">
                             <span class="checkbox-icon">UX/UI</span>                       
                         </label>
-                        <label for="ctg-editing" class="custom-checkbox flex items-center">
-                            <input type="checkbox" id="ctg-editing" class="form-checkbox">
-                            <span class="checkbox-icon">Redigering</span>                       
-                        </label>                     
+                        <label for="ctg-motion" class="custom-checkbox flex items-center">
+                            <input type="checkbox" id="ctg-motion" class="form-checkbox">
+                            <span class="checkbox-icon">Motion</span>                       
+                        </label>
+                        <label for="ctg-cms" class="custom-checkbox flex items-center">
+                            <input type="checkbox" id="ctg-cms" class="form-checkbox">
+                            <span class="checkbox-icon">CMS</span>                       
+                        </label>
+                        <label for="ctg-adobe" class="custom-checkbox flex items-center">
+                            <input type="checkbox" id="ctg-adobe" class="form-checkbox">
+                            <span class="checkbox-icon">Adobe-suiten</span>                       
+                        </label>
+                        <label for="ctg-3d" class="custom-checkbox flex items-center">
+                            <input type="checkbox" id="ctg-3d" class="form-checkbox">
+                            <span class="checkbox-icon">3D</span>                       
+                        </label>                      
                     </div>
                 </div>
                 <label class="p1 mt-2" for="companyRequirements">Vad kan man förvänta sig för uppgifter som LIA-student?</label>
