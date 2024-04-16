@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+	font-family: "Inter", sans-serif;
+}
+
+.chatLink{
+	color: black;
+	text-decoration: none;
+}
+
+.chat{
+	height: 80px;
+	width: 60vw;
+	margin: 20px auto;
+	padding: 6px;
+	box-shadow: 0px 3px 16px rgba(0, 0, 0, .3);
+	border-radius: 8px;
+}
+
+.chat > h3{
+	margin: 10px;
+	font-size: 24px;
+}
+
+.chat > p{
+	margin: 10px;
+	font-size: 18px;
+}
