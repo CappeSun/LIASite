@@ -15,9 +15,6 @@ Route::get('/', function(){
 Route::get('/test', function(){
     return view('indexTest')->with('user', userInfo());
 })->name('indexTest');
-Route::get('/chat', function(){
-    return view('chat')->with('user', userInfo());
-})->name('chat');
 
 
 /* Profile */
@@ -73,7 +70,7 @@ Route::post('/favorites/add', [FavoriteController::class, 'add'])->middleware('a
 Route::post('/favorites/remove', [FavoriteController::class, 'remove'])->middleware('auth');
 
 /* CHAT */
-Route::get('/chats', [ChatController::class, 'getList'])->middleware('auth');
+Route::get('/chats', [ChatController::class, 'getList'])->name('chat')->middleware('auth');
 Route::get('/chats/{receiver}', [ChatController::class, 'get'])->middleware('auth');
 Route::post('/chats/load', [ChatController::class, 'load'])->middleware('auth');
 Route::post('/chats/send', [ChatController::class, 'send'])->middleware('auth');
