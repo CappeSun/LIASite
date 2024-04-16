@@ -32,7 +32,6 @@ Route::post('/register-student', [UserController::class, 'create'])->name('regis
 Route::get('/register-company', function(){
     return view('register-company');
 })->name('register-company');
-Route::post('/register-company', [UserController::class, 'create'])->name('register-company');
 
 Route::get('/gdpr', function(){
     return view('gdpr');

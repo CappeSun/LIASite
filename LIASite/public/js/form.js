@@ -106,6 +106,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Submit all
     window.submitForm = function () {
+        let positions = '';
+
+        if (document.getElementById('ctg-frontend').checked) positions = positions+'Frontend|';
+        if (document.getElementById('ctg-backend').checked) positions = positions+'Backend|';
+        if (document.getElementById('ctg-javascript').checked) positions = positions+'JavaScript|';
+        if (document.getElementById('ctg-phpCompetence').checked) positions = positions+'PHP|';
+        if (document.getElementById('ctg-wordpress').checked) positions = positions+'WordPress|';
+        if (document.getElementById('ctg-react').checked) positions = positions+'React|';
+        if (document.getElementById('ctg-csharp').checked) positions = positions+'C#|';
+        if (document.getElementById('ctg-sql').checked) positions = positions+'SQL|';
+        if (document.getElementById('ctg-figma').checked) positions = positions+'Figma|';
+        if (document.getElementById('ctg-uxui').checked) positions = positions+'UX/UI|';
+        if (document.getElementById('ctg-motion').checked) positions = positions+'Motion|';
+        if (document.getElementById('ctg-cms').checked) positions = positions+'CMS|';
+        if (document.getElementById('ctg-adobe').checked) positions = positions+'Adobe-suiten|';
+        if (document.getElementById('ctg-3d').checked) positions = positions+'3D|';
+
+        positionsInput.value = positions;
+
+        if (document.getElementById('countEmployees1-4').checked) size = '1-4';
+        else if (document.getElementById('countEmployees5-8').checked) size = '5-8';
+        else if (document.getElementById('countEmployees9-12').checked) size = '9-12';
+        else if (document.getElementById('countEmployeesMore').checked) size = 'More';
+
+        sizeInput.value = size;
+
         regCompanyForm.submit();
     };
 

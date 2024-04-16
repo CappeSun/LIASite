@@ -2,7 +2,7 @@
 @include('header')
 
 <section class="mt-6 page-height">
-    <form class="flex flex-col sm:items-center" action="javascript:void(0)" method="post" id="regCompanyForm">
+    <form class="flex flex-col sm:items-center" action="/account/create" method="post" id="regCompanyForm">
         @csrf
         <!-- Form 1 -->
         <div class="p-6 mt-6 sm:w-2/3 form">
@@ -75,7 +75,7 @@
                         </label>
                         <label for="ctg-wordpress" class="custom-checkbox flex items-center">
                             <input type="checkbox" id="ctg-wordpress" class="form-checkbox">
-                            <span class="checkbox-icon">Wordpress</span>                       
+                            <span class="checkbox-icon">WordPress</span>                       
                         </label>
                         <label for="ctg-react" class="custom-checkbox flex items-center">
                             <input type="checkbox" id="ctg-react" class="form-checkbox">
@@ -144,6 +144,8 @@
             <button class="btn btn-marine next-btn" id="submitForm" type="submit">Nästa</button>
         </div>
         <input type="hidden" name="level" value="2">
+        <input type="hidden" id="positionsInput" name="positions" value="">
+        <input type="hidden" id="sizeInput" name="size" value="">
     </form>
 </section>
 
