@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class PanelController extends Controller
 {
     public function getList(Request $request){
-        $panels = Panel::where('public', true)->get()->toArray();
+        $panels = Panel::where('public', false)->get()->toArray();   // Byt till true vid ordentlig release
         return view('panels')->with('panels', $panels);
     }
 
@@ -121,7 +121,7 @@ class PanelController extends Controller
     }
 
     public function matcha(Request $request){
-        $panels = Panel::where('public', true)->get()->toArray();
+        $panels = Panel::where('public', false)->get()->toArray();  // Byt till true vid ordentlig release
         return view('matcha')->with('panels', $panels);
     }
 }
