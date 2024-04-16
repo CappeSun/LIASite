@@ -16,6 +16,12 @@
                 </div>
             </a>
         <?php } ?>
+        <?php if ($chats == []){ ?>
+            <div class="chat">
+                <h3>Du har inga chatter än...</h3>
+                <p>Skriv ett meddelande till någon!</p>
+            </div>
+        <?php } ?>
     </div>
 </body>
 </html>
