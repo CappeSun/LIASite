@@ -9,8 +9,8 @@
 <body>
     <div>
         <?php foreach ($chats as $chat){ ?>
-            <a class="chat" href="/chats/<?= $chat['name']; ?>">
-                <div>
+            <a class="chatLink" href="/chats/<?= $chat['name']; ?>">
+                <div class="chat">
                     <h3><?= $chat['name']; ?></h3>
                     <p><?= $chat['lastSent'] ? 'You sent a message' : 'You received a message'; ?></p>
                 </div>

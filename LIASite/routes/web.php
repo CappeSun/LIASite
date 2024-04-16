@@ -54,6 +54,11 @@ Route::get('/account/panel', function(){    // Change to panelcontroller and lim
 Route::post('/account/create', [UserController::class, 'create'])->middleware('guest');
 Route::post('/account/delete', [UserController::class, 'delete'])->middleware('auth');
 
+/* FAVORITES */
+Route::get('/favorites', [FavoriteController::class, 'get'])->name('favorites');
+Route::post('/favorites/add', [FavoriteController::class, 'add'])->middleware('auth');
+Route::post('/favorites/remove', [FavoriteController::class, 'remove'])->middleware('auth');
+
 /* CHAT */
 Route::get('/chats', [ChatController::class, 'getList'])->middleware('auth');
 Route::get('/chats/{receiver}', [ChatController::class, 'get'])->middleware('auth');

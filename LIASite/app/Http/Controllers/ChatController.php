@@ -7,7 +7,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Message;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Builder;
 
 class ChatController extends Controller
