@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->smallInteger('access_level')->default(0);    //0: Student, 1: Company, 2: Admin
+            $table->smallInteger('access_level')->nullable()->default(0);    //0: Student, 1: Company, 2: Admin
             $table->timestamps();
         });
 
