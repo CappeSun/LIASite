@@ -10,7 +10,7 @@ class PanelController extends Controller
 {
     public function getList(Request $request){
         $panels = Panel::where('public', true)->get()->toArray();
-        return view('matcha')->with('panel', $panels);
+        return view('panels')->with('panels', $panels);
     }
 
     public function get(Request $request, $panel){
@@ -118,5 +118,10 @@ class PanelController extends Controller
         $panel = Panel::where('user_id', Auth::user()['id']);
         $panel->public = false;
         $panel->save();
+    }
+
+    public function matcha(Request $request){
+        $panels = Panel::where('public', true)->get()->toArray();
+        return view('matcha')->with('panels', $panels);
     }
 }
