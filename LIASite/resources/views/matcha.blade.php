@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 
-<section>
+<section class="h-screen">
     <div class="cards flex justify-center items-center">
         <div class="grid grid-cols-2 gap-4 bg-marine4">
             @foreach ($panel as $item)

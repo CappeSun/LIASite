@@ -10,8 +10,8 @@
         <div class="drop-menu hidden text-center w-screen h-fit top-28 flex-col gap-2.5 inset-0 fixed bg-white shadow-lg z-10 px-6 pb-4 pt-6">
             {{-- Dropmenu links --}}
             <a href="{{ route('profile') }}">Mina favoriter</a>
-            <a href="">Matcha</a>
-            <a href="">Om eventet</a>
+            <a href="{{ route('matcha') }}">Matcha</a>
+            <a href="{{ route('index') }}">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
             @auth
                 <a href="{{ route('chat') }}">Chat</a>
@@ -26,8 +26,8 @@
         <div class="menu-desktop hidden sm:flex gap-9">
             {{-- Desktop-menu links --}}
             <a href="{{ route('profile') }}">Mina favoriter</a>
-            <a href="">Matcha</a>
-            <a href="">Om eventet</a>
+            <a href="{{ route('matcha') }}">Matcha</a>
+            <a href="{{ route('index') }}">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
             @auth
                 <a href="{{ route('chat') }}">Chat</a>
