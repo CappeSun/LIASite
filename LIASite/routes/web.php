@@ -42,17 +42,15 @@ Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
-/* MATCHA */
-Route::get('/matcha', [PanelController::class, 'getList'])->name('matcha');
-
 /* PANEL */
-
+Route::get('/panels', [PanelController::class, 'getList']);
 Route::get('/panels/{panel}', [PanelController::class, 'get']);
 Route::post('/panels/create', [PanelController::class, 'create'])->middleware('auth');
 Route::patch('/panels/update', [PanelController::class, 'update'])->middleware('auth');
 Route::post('/panels/delete', [PanelController::class, 'delete'])->middleware('auth');
 Route::patch('/panels/public', [PanelController::class, 'public'])->middleware('auth');
 Route::patch('/panels/private', [PanelController::class, 'private'])->middleware('auth');
+Route::get('/matcha', [PanelController::class, 'matcha'])->name('matcha');
 
 /* ACCOUNT */
 Route::get('/account', function(){
