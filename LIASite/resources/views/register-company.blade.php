@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 
-<section class="mt-6 page-height">
+<section class="mt-6 h-screen">
     <form class="flex flex-col sm:items-center" action="/account/create" method="post" id="regCompanyForm">
         @csrf
         <!-- Form 1 -->
@@ -167,7 +167,7 @@
             <!-- Checkbox size values here -->
         </div>
     </div>
-    <div class="buttons mt-11">
+    <div class="buttons">
         <a href="{{ route('index') }}"><button class="btn btn-1">Avbryt</button></a>
         <button class="btn btn-marine" onclick="submitForm()">Allt stämmer</button>
     </div>
