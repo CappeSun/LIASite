@@ -17,7 +17,7 @@
                 <a href="{{ route('login') }}">Logga in</a>
             @endguest
             @auth
-                <a href="{{-- {{ route('logout') }} --}}">Logga ut</a>
+                <a href="{{ route('logout') }}">Logga ut</a>
             @endauth
         </div>
         <div class="menu-desktop hidden sm:flex gap-9">
@@ -30,7 +30,7 @@
                 <a href="{{ route('login') }}">Logga in</a>
             @endguest
             @auth
-                <a href="{{-- {{ route('logout') }} --}}">Logga ut</a>
+                <a href="{{ route('logout') }}">Logga ut</a>
             @endauth
         </div>
     </nav>
