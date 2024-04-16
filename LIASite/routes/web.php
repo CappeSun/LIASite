@@ -19,8 +19,6 @@ Route::get('/chat', function(){
     return view('chat')->with('user', userInfo());
 })->name('chat');
 
-/* MATCHA */
-Route::get('/matcha', [UserController::class, 'showAllUsers'])->name('matcha');
 
 /* Profile */
 Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
@@ -48,8 +46,11 @@ Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
+/* MATCHA */
+Route::get('/matcha', [PanelController::class, 'getList'])->name('matcha');
+
 /* PANEL */
-Route::get('/panels', [PanelController::class, 'getList']);
+
 Route::get('/panels/{panel}', [PanelController::class, 'get']);
 Route::post('/panels/create', [PanelController::class, 'create'])->middleware('auth');
 Route::patch('/panels/update', [PanelController::class, 'update'])->middleware('auth');
