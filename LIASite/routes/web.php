@@ -19,6 +19,12 @@ Route::get('/chat', function(){
     return view('chat')->with('user', userInfo());
 })->name('chat');
 
+/* MATCHA */
+Route::get('/matcha', [UserController::class, 'showAllUsers'])->name('matcha');
+
+/* Profile */
+Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
+
 /* CREATE ACCOUNT */
 Route::get('/register-student', function(){
     return view('register-student');
@@ -37,9 +43,10 @@ Route::get('/gdpr', function(){
 /* LOGIN */
 Route::get('/login', function(){
     return view('login');
-})->name('login');
+})->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
-Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 /* PANEL */
 Route::get('/panels', function(){

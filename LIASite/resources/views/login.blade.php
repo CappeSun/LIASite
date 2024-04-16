@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 
-<section class=" page-height page-height-desktop">
+<section class="page-height page-height-desktop">
     <div class="login mt-12 p-6 flex justify-center">
         <div class="login-screen flex flex-col items-center">
             <p class="mb-9 font-semibold text-2xl sm:text-4xl">Logga in</p>
@@ -12,7 +12,7 @@
         <div class="login-student register-container form-bg sm:w-2/4">
             <h6 class="text-center">Student</h6>
             {{-- TODO: Add routes --}}
-            <form action="{{ route('index') }}" method="post">
+            <form action="{{ route('login') }}" method="post">
                 @csrf
                 <label class="p1" for="email">E-postadress</label>
                 <input class="form-input" type="email" id="studentEmail" name="email" placeholder="name@example.com" required>

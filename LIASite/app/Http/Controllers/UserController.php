@@ -41,6 +41,19 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function showAllUsers()
+    {
+        $users = User::all();
+        return view('matcha', ['users' => $users]);
+    }
+
+    public function profile()
+    {
+        $user = auth()->user();
+
+        return view('profile', compact('user'));
+    }
+
     public function updateEmail(Request $request)
     {
         return response('Blame Cappe', 501);    // Temporary until done
