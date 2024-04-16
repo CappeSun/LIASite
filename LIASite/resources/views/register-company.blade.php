@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 
-<section class="mt-6 page-height page-height-desktop">
+<section class="mt-6 page-height">
     <form class="flex flex-col sm:items-center" action="javascript:void(0)" method="post" id="regCompanyForm">
         @csrf
         <!-- Form 1 -->

@@ -91,8 +91,8 @@ class UserController extends Controller
 
     public function showAllUsers()
     {
-        $users = User::all();
-        return view('matcha', ['users' => $users]);
+        $company = Panel::all();
+        return view('matcha', ['company' => $company]);
     }
 
     public function profile()

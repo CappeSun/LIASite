@@ -202,7 +202,7 @@ h6 {
 
 @media screen and (min-width: 640px) {
     .page-height {
-        height: auto;
+        height: unset;
     }
 
     h5 {
