@@ -39,7 +39,7 @@ Route::get('/login', function(){
     return view('login');
 })->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
-
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 /* PANEL */
