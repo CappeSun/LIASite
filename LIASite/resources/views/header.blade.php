@@ -14,7 +14,7 @@
             <a href="{{ route('index') }}">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
             @auth
-                <a href="{{ route('chat') }}">Chat</a>
+                <a href="{{ route('chat') }}">Chatt</a>
             @endauth
             @guest
                 <a href="{{ route('login') }}">Logga in</a>
@@ -30,7 +30,7 @@
             <a href="{{ route('index') }}">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
             @auth
-                <a href="{{ route('chat') }}">Chat</a>
+                <a href="{{ route('chat') }}">Chatt</a>
             @endauth
             @guest
                 <a href="{{ route('login') }}">Logga in</a>

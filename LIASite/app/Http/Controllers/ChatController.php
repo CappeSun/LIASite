@@ -53,7 +53,7 @@ class ChatController extends Controller
 
     public function get(Request $request, $receiver)
     {
-        if (User::where('name', $receiver)->first())
+        if (User::where('name', $receiver)->first() && $receiver != Auth::user()['name'])
             return view('chat')->with('receiver', $receiver);
         return response('User not found', 404);
     }

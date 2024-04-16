@@ -11,7 +11,7 @@
         <h1 class="title"><?= $receiver; ?></h1>
         <div class="chatbox" id="chatbox"></div>
         <textarea class="msgBox" id="msg"></textarea>
-        <button class="sendBtn" id="sendBtn">Send!</button>
+        <button class="sendBtn" id="sendBtn">Skicka!</button>
     </div>
 </body>
 <script>

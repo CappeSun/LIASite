@@ -12,7 +12,7 @@
             <a class="chatLink" href="/chats/<?= $chat['name']; ?>">
                 <div class="chat">
                     <h3><?= $chat['name']; ?></h3>
-                    <p><?= $chat['lastSent'] ? 'You sent a message' : 'You received a message'; ?></p>
+                    <p><?= $chat['lastSent'] ? 'Du skickade ett meddelande' : 'Du fick ett meddelande'; ?></p>
                 </div>
             </a>
         <?php } ?>

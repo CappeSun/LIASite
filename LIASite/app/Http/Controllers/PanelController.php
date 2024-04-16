@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Panel;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PanelController extends Controller
 {
     public function getList(Request $request){
         $panels = Panel::where('public', false)->get()->toArray();   // Byt till true vid ordentlig release
-        return view('panels')->with('panels', $panels);
+
+        $users = [];
+
+        foreach ($panels as $panel)
+            $users[] = User::where('id', $panel['user_id'])->first();
+
+        return view('panels')->with('panels', $panels)->with('users', $users);
     }
 
     public function get(Request $request, $panel){
@@ -121,7 +128,13 @@ class PanelController extends Controller
     }
 
     public function matcha(Request $request){
-        $panels = Panel::where('public', false)->get()->toArray();  // Byt till true vid ordentlig release
-        return view('matcha')->with('panels', $panels);
+        $panels = Panel::where('public', false)->get()->toArray();   // Byt till true vid ordentlig release
+
+        $users = [];
+
+        foreach ($panels as $panel)
+            $users[] = User::where('id', $panel['user_id'])->first();
+
+        return view('matcha')->with('panels', $panels)->with('users', $users);
     }
 }
