@@ -1,8 +1,8 @@
 function loginStudent() {
     const chooseLogin = document.querySelector(".login-screen");
     chooseLogin.style.display = "none";
-    const loginForm = document.querySelector(".login-student");
-    loginForm.style.display = "block";
+    const loginFormStudent = document.querySelector(".login-student");
+    loginFormStudent.style.display = "block";
 }
 
 function loginCompany() {

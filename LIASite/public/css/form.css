@@ -3,9 +3,7 @@
 .register-container {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    margin-top: 24px;
-    padding: 24px;
+    padding: 24px 16px;
 }
 
 .register-container > h6 {
@@ -16,24 +14,27 @@
 .register-container form {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 10px;
 }
 
-.register-container form input {
+.gap-custom {
+    gap: 10px;
+}
+
+input {
     padding: 8px 0px;
     background-color: unset;
     border-bottom: 1px solid black;
 }
 
-.register-container form input:focus {
+input:focus {
     outline: none;
 }
 
 .register-container button {
     align-self: center;
     margin-bottom: 10px;
-    margin-top: 46px;
+    margin-top: 10px;
 }
 
 .buttons {
@@ -75,6 +76,41 @@
     margin-bottom: 16px;
 }
 
+.competence h6 {
+    text-align: left;
+}
+
+/* Confirmation-box */
+
+.checkbox-icon-confirmation {
+    color: black;
+    background-color: white;
+    padding: 8px;
+    border-radius: 36px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#confirmation {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 24vh;
+    flex-direction: column;
+}
+
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--marine4);
+    padding: 24px;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
 /* Login screen */
 
 .login-student,
@@ -109,4 +145,10 @@
 #formError2,
 #formError3 {
     color: red;
+}
+
+@media screen and (min-width: 640px) {
+    .register-container {
+        padding: 24px 14%;
+    }
 }
