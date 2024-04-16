@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
     lastSubmitButton.addEventListener("click", function (event) {
         event.preventDefault();
 
-        forms.style.display = "none";
+        regCompanyForm.style.display = "none";
+        confirmationBox.style.display = "flex";
 
         // Get input data from forms
         const formData = {
@@ -59,23 +60,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 .value.trim(),
         };
 
-        // Display confirmation
-        const confirmationMessage = `
-        <h6>BEKRÄFTA ATT ALLT STÄMMER</h6>
-        <div class="confirmation-container">
-            <h4>${formData.companyName}</h4> 
-            <p>${formData.companyEmail}</p>
-            <p>${formData.location}</p>
-            <p>${formData.companyDescription}</p>
-            <p>${formData.companyContact}</p> 
-            <p>${formData.companyRequirements}</p> 
-        </div>
-        <div>
-            <button class="btn btn-1" onclick="submitForm()">Allt stämmer</button>
-            <a href="{{ route('index') }}"><button class="btn btn-2">Avbryt</button></a>
-        </div>
-    `;
-        confirmationBox.innerHTML = confirmationMessage;
+        // Get checked checkboxes from competence
+        const checkedCheckboxesCompetence = document.querySelectorAll(
+            '.companyCompetenceCheckboxes input[type="checkbox"]:checked'
+        );
+        const checkedCheckboxCompetenceValues = Array.from(
+            checkedCheckboxesCompetence
+        ).map((checkbox) => {
+            return checkbox.nextElementSibling.textContent.trim();
+        });
+
+        // Get checked checkboxes from company size
+        const checkedCheckboxesSize = document.querySelectorAll(
+            '.companySizeCheckboxes input[type="checkbox"]:checked'
+        );
+        const checkedCheckboxSizeValues = Array.from(checkedCheckboxesSize).map(
+            (checkbox) => {
+                return checkbox.nextElementSibling.textContent.trim();
+            }
+        );
+
+        // Insert data from forms to confirmationbox
+        document.getElementById("c-companyName").textContent =
+            formData.companyName;
+        document.getElementById("c-companyEmail").textContent =
+            formData.companyEmail;
+        document.getElementById("c-location").textContent = formData.location;
+        document.getElementById("c-companyDescription").textContent =
+            formData.companyDescription;
+        document.getElementById("c-companyRequirements").textContent =
+            formData.companyRequirements;
+
+        // Populate competence checkbox values
+        const competenceList = document.getElementById("competenceList");
+        competenceList.innerHTML = checkedCheckboxCompetenceValues
+            .map((value) => `<p class="checkbox-icon-confirmation">${value}</p>`)
+            .join("");
+
+        // Populate size checkbox values
+        const sizeList = document.getElementById("sizeList");
+        sizeList.innerHTML = checkedCheckboxSizeValues
+            .map((value) => `<p class="checkbox-icon-confirmation">${value}</p>`)
+            .join("");
     });
 
     // Submit all

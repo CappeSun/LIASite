@@ -54,7 +54,7 @@
                 <h6>Info om LIA</h6>
                 <div class="competence">
                     <h6 class="p1 text-left">Kompetens ni är ute efter?</h6>
-                    <div class="grid grid-cols-3 gap-1 pt-4 pb-2 px-6">
+                    <div class="companyCompetenceCheckboxes grid grid-cols-3 gap-1 pt-4 pb-2 px-6">
     
                         {{-- Competence checkboxes. ctg = category --}}
                         <label for="ctg-frontend" class="custom-checkbox flex items-center">
@@ -107,7 +107,7 @@
                 <input class="form-input" type="text" id="companyRequirements" name="requirements" placeholder="Ex. jobba med designsystem" required>
                 
                 <h6 class="p1 my-2">Hur stort är teamet?</h6>
-                <div class="grid grid-cols-4 gap-1 pt-1.5 px-6">
+                <div class="companySizeCheckboxes grid grid-cols-4 gap-1 pt-1.5 px-6">
                     <label for="countEmployees1-4" class="custom-checkbox flex items-center">
                       <input type="checkbox" id="countEmployees1-4" class="form-checkbox">
                       <span class="checkbox-icon">1-4</span>                     
@@ -134,7 +134,29 @@
     </form>
 </section>
 
-<div id="confirmation"></div>
+{{-- <div id="confirmation"></div> --}}
+<div id="confirmation">
+    <p class="text-lg font-semibold">BEKRÄFTA ATT ALLT STÄMMER</p>
+    <div class="confirmation-container">
+        <h4 id="c-companyName"></h4> 
+        <p id="c-companyEmail"></p>
+        <p id="c-location"></p>
+        <p id="c-companyDescription"></p>
+        <div id="competenceList" class="grid grid-cols-4 gap-1 pt-1.5">
+            <!-- Checkbox competence values here -->
+        </div>
+        <strong>LIA vad kan man förvänta sig</strong>
+        <p id="c-companyRequirements"></p>
+        <strong>Hur stort är teamet</strong>
+        <div id="sizeList" class="grid grid-cols-4 gap-1 pt-1.5">
+            <!-- Checkbox size values here -->
+        </div>
+    </div>
+    <div class="buttons mt-11">
+        <a href="{{ route('index') }}"><button class="btn btn-1">Avbryt</button></a>
+        <button class="btn btn-marine" onclick="submitForm()">Allt stämmer</button>
+    </div>
+</div>
 
 @include('footer')
 

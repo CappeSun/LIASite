@@ -80,6 +80,37 @@ input:focus {
     text-align: left;
 }
 
+/* Confirmation-box */
+
+.checkbox-icon-confirmation {
+    color: black;
+    background-color: white;
+    padding: 8px;
+    border-radius: 36px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#confirmation {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 24vh;
+    flex-direction: column;
+}
+
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--marine4);
+    padding: 24px;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
 /* Login screen */
 
 .login-student,
