@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @include('header')
 
-<section>
+<section class="h-screen">
     <div class="cards flex justify-center items-center">
         <div class="grid grid-cols-2 gap-4 bg-marine4">
-            <?php ($panels as $panel){ ?>
+            <?php foreach ($panels as $panel){ ?>
                 <a href="/panels/<?= $panel['name']; ?>">
                     <div class="card p-6">
                         <h4 class="text-white">{{ $panel['name'] }}</h4>
