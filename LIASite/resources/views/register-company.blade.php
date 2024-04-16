@@ -29,16 +29,16 @@
             <div class="register-container bg-marine1 gap-custom">
                 <h6>Om företag</h6>
                 <label class="p1" for="companyName">Företagets namn</label>
-                <input class="form-input" type="text" id="companyName" name="company-name" placeholder="Namn..." required>
+                <input class="form-input" type="text" id="companyName" name="cName" placeholder="Namn..." required>
 
                 <label class="p1" for="companyContact">Kontaktinfo</label>
-                <input class="form-input" type="text" id="companyContact" name="company-contact" placeholder="name@example.com, LinkedIn etc." required>
+                <input class="form-input" type="text" id="companyContact" name="contact" placeholder="name@example.com, LinkedIn etc." required>
 
                 <label class="p1" for="location">Var ligger kontoret?</label>
                 <input class="form-input" type="text" id="location" name="location" placeholder="Vasagatan, Göteborg" required>
 
                 <label class="p1" for="companyDescription">Vad arbetar företaget med?</label>
-                <input class="form-input" type="text" id="companyDescription" name="company-description" placeholder="Fordon" required>
+                <input class="form-input" type="text" id="companyDescription" name="area" placeholder="Fordon" required>
 
                 <p id="formError2"></p>
             </div>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <label class="p1 mt-2" for="companyRequirements">Vad kan man förvänta sig för uppgifter som LIA-student?</label>
-                <input class="form-input" type="text" id="companyRequirements" name="requirements" placeholder="Ex. jobba med designsystem" required>
+                <input class="form-input" type="text" id="companyRequirements" name="tasks" placeholder="Ex. jobba med designsystem" required>
                 
                 <h6 class="p1 my-2">Hur stort är teamet?</h6>
                 <div class="companySizeCheckboxes grid grid-cols-4 gap-1 pt-1.5 px-6">
@@ -143,6 +143,7 @@
             <button class="btn btn-1 prev-btn" type="submit">Tillbaka</button>
             <button class="btn btn-marine next-btn" id="submitForm" type="submit">Nästa</button>
         </div>
+        <input type="hidden" name="level" value="2">
     </form>
 </section>
 

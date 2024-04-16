@@ -12,7 +12,7 @@
         <div class="login-student register-container form-bg sm:w-2/4">
             <h6 class="text-center">Student</h6>
             {{-- TODO: Add routes --}}
-            <form action="{{ route('index') }}" method="post">
+            <form action="/login" method="post">
                 @csrf
                 <label class="p1" for="email">E-postadress</label>
                 <input class="form-input" type="email" id="studentEmail" name="email" placeholder="name@example.com" required>
@@ -27,7 +27,7 @@
         <div class="login-company register-container form-bg sm:w-2/4">
             <h6 class="text-center">Företag</h6>
             {{-- TODO: Add routes --}}
-            <form action="login" method="post">
+            <form action="/login" method="post">
                 @csrf
                 <label class="p1" for="email">E-postadress</label>
                 <input class="form-input" type="email" id="companyEmail" name="email" placeholder="name@example.com" required>

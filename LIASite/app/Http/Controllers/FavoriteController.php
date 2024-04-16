@@ -18,7 +18,7 @@ class FavoriteController extends Controller
     {
         $data = json_decode(file_get_contents('php://input'), true);
 
-        $fav = new Favorite();
+        $fav = new Favorite;
         $fav->user_id = Auth::user()['id'];
         $fav->panel_id = $data['id'];
         $fav->save();

@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PanelController extends Controller
 {
+    public function getList(Request $request){
+        $panels = Panel::where('public', true)->get()->toArray();
+        return view('panels')->with('panel', $panels);
+    }
+
     public function get(Request $request, $panel){
         // Get panel id from panel name
         return view('panel')->with('panel', Panel::where('name', $panel));
@@ -17,8 +22,6 @@ class PanelController extends Controller
     {
         if (Auth::user()['access_level'] < 1)
             return response('Only company accounts may create a panel', 401);
-        if (!Auth::user()['email_verified_at'])
-            return response('Email not yet verified, contact <email> and I\'ll get you set up', 401);
         if (Panel::where('user_id', Auth::user()['id'])->first())
             return response('You may only create one panel', 401);
 
@@ -63,7 +66,7 @@ class PanelController extends Controller
 
         $panel->save();
 
-        return redirect('/account');
+        return redirect('/panels');
     }
 
     public function update(Request $request)
@@ -80,7 +83,7 @@ class PanelController extends Controller
 
         $this->validate($request, [
             'name' => 'nullable|string|max:255',
-            'email' => 'nullable|email|max:255',
+            'email' => 'nullable|string|max:255',
             'location' => 'nullable|string|max:255',
             'area' => 'nullable|string|max:255',
             'positions' => 'nullable|string|max:500',
@@ -113,5 +116,25 @@ class PanelController extends Controller
         $panel->delete();
 
         return back();
+    }
+
+    public function public(Request $request)
+    {
+        if (!Auth::user()['email_verified_at'])
+            return view('verify');
+
+        $panel = Panel::where('user_id', Auth::user()['id']);
+        $panel->public = true;
+        $panel->save();
+    }
+
+    public function private(Request $request)
+    {
+        if (!Auth::user()['email_verified_at'])
+            return view('verify');
+
+        $panel = Panel::where('user_id', Auth::user()['id']);
+        $panel->public = false;
+        $panel->save();
     }
 }
