@@ -12,11 +12,11 @@ class Panel extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'email',
+        'contact',
         'location',
         'area',
         'positions',
-        'desc',
+        'tasks',
         'size',
         'public'
     ];

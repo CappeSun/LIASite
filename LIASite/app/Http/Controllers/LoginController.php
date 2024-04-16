@@ -22,12 +22,10 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return back();
+            return redirect('/');
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return redirect('/login');
     }
 
     public function logout(Request $request)

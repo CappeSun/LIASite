@@ -16,11 +16,11 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->string('name', 255)->unique();
-            $table->string('email', 255);
+            $table->string('contact', 255);
             $table->string('location', 255);
             $table->string('area', 255);
             $table->string('positions', 500);
-            $table->string('desc', 2000);
+            $table->string('tasks', 255);
             $table->string('size', 255);
             $table->boolean('public')->default(false);
             $table->foreign('user_id')->references('id')->on('users');
