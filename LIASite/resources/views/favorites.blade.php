@@ -22,23 +22,14 @@
                     <a class="text-white" href="/chats/<?= $users[$i]['name']; ?>">Chatta!</a>
                 </div>
             </a>
-            <div><button class="checkbox-icon-confirmation" onclick="addFav(<?= $panels[$i]['id']; ?>)">Favorit</button></div>
+            <form action="/favorites/remove" method="post">
+                <input type="hidden" name="id" value="<?= $panels[$i]['id']; ?>">
+                <button class="checkbox-icon-confirmation" type="submit">Ta Bort</button>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            </form>
             <?php } ?>
         </div>
     </div>
-    <script type="text/javascript">
-    async function addFav(id){
-        let response = await fetch('http://localhost:8002/favorites/add', {
-            method: 'POST',
-            headers: {
-                'X-CSRF-Token': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({
-                id: id
-            })
-        });
-    }
-    </script>
 </section>
 
 @include('footer')

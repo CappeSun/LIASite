@@ -4,26 +4,24 @@
 <section class="h-screen">
     <div class="cards flex justify-center items-center">
         <div class="grid grid-cols-2 gap-4 bg-marine4">
-            <?php for($i = 0; $i < count($panels); $i++){ ?>
-            <a href="/panels/<?= $panels[$i]['name']; ?>">
+            <a href="/panels/<?= $panel['name']; ?>">
                 <div class="card p-6">
-                    <h4 class="text-white"><?= $panels[$i]['name']; ?></h4>
-                    <p class="text-white"><?= $panels[$i]['contact']; ?></p>
-                    <p class="text-white"><?= $panels[$i]['location']; ?></p>
+                    <h4 class="text-white"><?= $panel['name']; ?></h4>
+                    <p class="text-white"><?= $panel['contact']; ?></p>
+                    <p class="text-white"><?= $panel['location']; ?></p>
                     <div class="grid grid-cols-4 gap-1 pt-1.5 text-black">
                         {{-- competence here --}}
-                        <?php $positions = explode('|', $panels[$i]['positions']); ?>
+                        <?php $positions = explode('|', $panel['positions']); ?>
                         <?php foreach ($positions as $position){ ?>
                             <div class="checkbox-icon-confirmation">
                                 <?= $position; ?>
                             </div>
                         <?php } ?>
                     </div>
-                    <a class="text-white" href="/chats/<?= $users[$i]['name']; ?>">Chatta!</a>
+                    <a class="text-white" href="/chats/<?= $user['name']; ?>">Chatta!</a>
                 </div>
             </a>
-            <div><button class="checkbox-icon-confirmation" onclick="addFav(<?= $panels[$i]['id']; ?>)">Favorit</button></div>
-            <?php } ?>
+            <button class="checkbox-icon-confirmation" onclick="addFav(<?= $panel['id']; ?>)">Favorit</button>
         </div>
     </div>
     <script type="text/javascript">

@@ -22,7 +22,9 @@ class PanelController extends Controller
 
     public function get(Request $request, $panel){
         // Get panel id from panel name
-        return view('panel')->with('panel', Panel::where('name', $panel));
+        $panel = Panel::where('name', $panel)->first()->toArray();
+        $user = User::where('id', $panel['user_id'])->first()->toArray();
+        return view('panel')->with('panel', $panel)->with('user', $user);
     }
 
     public function create(Request $request)

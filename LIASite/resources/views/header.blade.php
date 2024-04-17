@@ -9,13 +9,12 @@
         </div>           
         <div class="drop-menu hidden text-center w-screen h-fit top-28 flex-col gap-2.5 inset-0 fixed bg-white shadow-lg z-10 px-6 pb-4 pt-6">
             {{-- Dropmenu links --}}
-            <a href="{{ route('profile') }}">Mina favoriter</a>
+            <a href="{{ route('favorites') }}">Mina favoriter</a>
             <a href="{{ route('matcha') }}">Matcha</a>
+            <a href="{{ route('panels') }}">Paneler</a>
             <a href="{{ route('index') }}">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
-            @auth
-                <a href="{{ route('chat') }}">Chatt</a>
-            @endauth
+            <a href="{{ route('chat') }}">Chatt</a>
             @guest
                 <a href="{{ route('login') }}">Logga in</a>
             @endguest
@@ -25,13 +24,12 @@
         </div>
         <div class="menu-desktop hidden sm:flex gap-9">
             {{-- Desktop-menu links --}}
-            <a href="{{ route('profile') }}">Mina favoriter</a>
+            <a href="{{ route('favorites') }}">Mina favoriter</a>
             <a href="{{ route('matcha') }}">Matcha</a>
+            <a href="{{ route('panels') }}">Paneler</a>
             <a href="{{ route('index') }}">Om eventet</a>
             <a href="{{ route('gdpr') }}">GDPR</a>
-            @auth
-                <a href="{{ route('chat') }}">Chatt</a>
-            @endauth
+            <a href="{{ route('chat') }}">Chatt</a>
             @guest
                 <a href="{{ route('login') }}">Logga in</a>
             @endguest
